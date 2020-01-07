@@ -25,7 +25,7 @@
     <xsd:element name="shares">
         <xsd:complexType>
             <xsd:sequence >
-                <xsd:element name="share" type="tns:share" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="shares" type="tns:share" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
