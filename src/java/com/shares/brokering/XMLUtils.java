@@ -7,6 +7,7 @@ package com.shares.brokering;
 
 import Data.*;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 /**
@@ -15,13 +16,13 @@ import java.util.List;
  */
 public class XMLUtils {
     
-    public static void marshallList(List<Data.Stock> shares, File file){
+    public static void marshallList(Data.StocksList shares, FileOutputStream outputStream){
         try {            
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(shares.getClass().getPackage().getName());
             javax.xml.bind.Marshaller marshaller = jaxbCtx.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_ENCODING, "UTF-8"); //NOI18N
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.marshal(shares, file);
+            marshaller.marshal(shares, outputStream);
         } catch (javax.xml.bind.JAXBException ex) {
             java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
         }

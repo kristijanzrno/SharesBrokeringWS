@@ -5,6 +5,8 @@
  */
 package com.shares.brokering;
 
+import java.io.File;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -29,8 +31,17 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "test")
     public String test(){
-     
-        return "";
+        List<Data.Stock> stocks = XMLUtils.unmarshallList(new File("testing.xml"));
+        String data = "*****************************************************";
+        for(Data.Stock stock : stocks){
+            data += ("\n Company Name: " + stock.getCompanyName());
+            data += ("\n Symbol: " + stock.getCompanySymbol());
+            data += ("\n Available Shares: " + stock.getNoOfAvailableShares());
+            data += ("\n Currency: " + stock.getPrice().getCurrency());
+            data += ("\n Value: " + stock.getPrice().getValue());
+            data += ("*****************************************************");
+        }
+        return data;
     }
     
 }

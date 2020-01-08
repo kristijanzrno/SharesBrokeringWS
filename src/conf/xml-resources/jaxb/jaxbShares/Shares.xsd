@@ -10,6 +10,8 @@
         <xsd:sequence>
             <xsd:element name="currency" type="xsd:string"/>
             <xsd:element name="value" type="xsd:double"/>
+            <xsd:element name="last_updated" type="xsd:date"/>
+
         </xsd:sequence>
     </xsd:complexType>
     

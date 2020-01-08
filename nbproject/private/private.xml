@@ -5,6 +5,7 @@
         <group>
             <file>file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/src/java/com/shares/brokering/BrokeringWS.java</file>
             <file>file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/src/java/com/shares/brokering/WSListener.java</file>
+            <file>file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/src/java/com/shares/brokering/XMLUtils.java</file>
             <file>file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/nbproject/build-impl.xml</file>
             <file>file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/Shares.xsd</file>
         </group>
