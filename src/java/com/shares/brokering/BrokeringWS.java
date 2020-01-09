@@ -29,19 +29,5 @@ public class BrokeringWS {
         return "Hello " + txt + " !";
     }
     
-    @WebMethod(operationName = "test")
-    public String test(){
-        List<Data.Stock> stocks = XMLUtils.unmarshallList(new File("testing.xml"));
-        String data = "*****************************************************";
-        for(Data.Stock stock : stocks){
-            data += ("\n Company Name: " + stock.getCompanyName());
-            data += ("\n Symbol: " + stock.getCompanySymbol());
-            data += ("\n Available Shares: " + stock.getNoOfAvailableShares());
-            data += ("\n Currency: " + stock.getPrice().getCurrency());
-            data += ("\n Value: " + stock.getPrice().getValue());
-            data += ("*****************************************************");
-        }
-        return data;
-    }
     
 }

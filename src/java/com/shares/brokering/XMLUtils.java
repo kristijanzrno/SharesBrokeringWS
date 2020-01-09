@@ -28,7 +28,7 @@ public class XMLUtils {
         }
     }
     
-    public static List<Data.Stock> unmarshallList(File file){
+    public static StocksList unmarshallList(File file){
         StocksList shares = new StocksList();
         try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(shares.getClass().getPackage().getName());
@@ -37,7 +37,7 @@ public class XMLUtils {
         } catch (javax.xml.bind.JAXBException ex) {
             java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
         }
-        return shares.getStocks();
+        return shares;
     }
     
 }

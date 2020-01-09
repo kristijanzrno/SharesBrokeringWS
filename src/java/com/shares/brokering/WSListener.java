@@ -30,8 +30,11 @@ public class WSListener implements ServletContextListener{
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+       StockInitialiser initialiser = new StockInitialiser();
        // Use during server setup only
-       new StockInitialiser().initialise();
+       //initialiser.initialise();
+       initialiser.updatePrices();
+       
        
     }
 
