@@ -5,10 +5,14 @@
  */
 package com.shares.brokering;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -26,34 +30,9 @@ public class WSListener implements ServletContextListener{
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        // TESTING
-        File f = new File("testing.xml");
-        if(!f.exists()){
-            try{
-                f.createNewFile();
-            }catch(IOException e){
-                e.printStackTrace();
-            }
-        }
-        Data.StocksList stocks = new Data.StocksList();
-        for(int i = 0; i<10; i++){
-            Data.Stock stock = new Data.Stock();
-            stock.setCompanyName("Company "+i);
-            stock.setCompanySymbol("Symbol "+i);
-            stock.setNoOfAvailableShares(i);
-            Data.Price price = new Data.Price();
-            price.setCurrency("USD"+i);
-            price.setValue(1000-i);
-            stock.setPrice(price);
-            stocks.getStocks().add(stock);
-        }
-        try {
-            FileOutputStream outputStream = new FileOutputStream(f);
-            XMLUtils.marshallList(stocks, outputStream);
-            outputStream.close();
-        } catch (Exception ex) {
-            Logger.getLogger(WSListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       // Use during server setup only
+       new StockInitialiser().initialise();
+       
     }
 
     @Override
