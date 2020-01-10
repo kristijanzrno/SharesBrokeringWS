@@ -51,8 +51,8 @@ public class StockInitialiser {
             String line;
             while ((line = br.readLine()) != null) {
                 Data.Stock stock = new Data.Stock();
-                stock.setCompanySymbol(line.split("::")[0]);
-                stock.setCompanyName(line.split("::")[1]);
+                stock.setCompanySymbol(line.split(";;")[0]);
+                stock.setCompanyName(line.split(";;")[1]);
                 stock.setNoOfAvailableShares(50000);
                 Data.Price price = new Data.Price();
                 price.setCurrency("USD");

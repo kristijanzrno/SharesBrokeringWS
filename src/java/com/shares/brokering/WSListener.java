@@ -33,7 +33,9 @@ public class WSListener implements ServletContextListener{
        StockInitialiser initialiser = new StockInitialiser();
        // Use during server setup only
        //initialiser.initialise();
-       initialiser.updatePrices();
+       
+       //Updating prices commented out due to api quota limit
+       //initialiser.updatePrices();
        
        
     }
