@@ -92,17 +92,16 @@ public class StockInitialiser {
             for(String call : apiCalls){
                 try {
                     String json = URLUtils.readURL(call);
-                    System.out.println(json);
+                    System.out.println(call);
                     JSONObject obj = new JSONObject(json);
                     list.add(obj);
                 } catch (Exception e) {
                 }
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException ex) {
                 }
             }
-            System.out.println("testing");
             for(int i = 0; i<stocksList.getStocks().size(); i++){
                 
                 JSONObject symbol = null;

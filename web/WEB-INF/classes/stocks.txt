@@ -1,4 +1,3 @@
-﻿AACG;;ATA Creativity Global
 AAL;;American Airlines Group
 AAME;;Atlantic American Corporation
 AAOI;;Applied Optoelectronics
@@ -17,7 +16,6 @@ ABUS;;Arbutus Biopharma Corporation
 ACAD;;ACADIA Pharmaceuticals Inc.
 ACAM;;Acamar Partners Acquisition Corp.
 ACAMU;;Acamar Partners Acquisition Corp.
-ACAMW;;Acamar Partners Acquisition Corp.
 ACBI;;Atlantic Capital Bancshares
 ACER;;Acer Therapeutics Inc.
 ACGL;;Arch Capital Group Ltd.
@@ -39,8 +37,6 @@ ACST;;Acasti Pharma
 ACT;;AdvisorShares Vice ETF
 ACTG;;Acacia Research Corporation
 ACTT;;Act II Global Acquisition Corp.
-ACTTU;;Act II Global Acquisition Corp.
-ACTTW;;Act II Global Acquisition Corp.
 ACWI;;iShares MSCI ACWI Index Fund
 ACWX;;iShares MSCI ACWI ex US Index Fund
 ADAP;;Adaptimmune Therapeutics plc
@@ -48,7 +44,6 @@ ADBE;;Adobe Inc.
 ADES;;Advanced Emissions Solutions
 ADI;;Analog Devices
 ADIL;;Adial Pharmaceuticals
-ADILW;;Adial Pharmaceuticals
 ADMA;;ADMA Biologics Inc
 ADMP;;Adamis Pharmaceuticals Corporation
 ADMS;;Adamas Pharmaceuticals
@@ -79,12 +74,8 @@ AFINP;;American Finance Trust
 AFMD;;Affimed N.V.
 AFYA;;Afya Limited
 AGBA;;AGBA Acquisition Limited
-AGBAR;;AGBA Acquisition Limited
-AGBAU;;AGBA Acquisition Limited
-AGBAW;;AGBA Acquisition Limited
 AGEN;;Agenus Inc.
 AGFS;;AgroFresh Solutions
-AGFSW;;AgroFresh Solutions
 AGIO;;Agios Pharmaceuticals
 AGLE;;Aeglea BioTherapeutics
 AGMH;;AGM Group Holdings Inc.
@@ -110,7 +101,6 @@ AIRG;;Airgain
 AIRR;;First Trust RBA American Industrial Renaissance ETF
 AIRT;;Air T
 AIRTP;;Air T
-AIRTW;;Air T
 AKAM;;Akamai Technologies
 AKBA;;Akebia Therapeutics
 AKCA;;Akcea Therapeutics
@@ -120,18 +110,12 @@ AKRX;;Akorn
 AKTS;;Akoustis Technologies
 AKTX;;Akari Therapeutics Plc
 ALAC;;Alberton Acquisition Corporation
-ALACR;;Alberton Acquisition Corporation
-ALACU;;Alberton Acquisition Corporation
-ALACW;;Alberton Acquisition Corporation
 ALBO;;Albireo Pharma
 ALCO;;Alico
 ALDX;;Aldeyra Therapeutics
 ALEC;;Alector
 ALGN;;Align Technology
 ALGR;;Allegro Merger Corp.
-ALGRR;;Allegro Merger Corp.
-ALGRU;;Allegro Merger Corp.
-ALGRW;;Allegro Merger Corp.
 ALGT;;Allegiant Travel Company
 ALIM;;Alimera Sciences
 ALJJ;;ALJ Regional Holdings
@@ -158,17 +142,13 @@ AMAL;;Amalgamated Bank
 AMAT;;Applied Materials
 AMBA;;Ambarella
 AMBC;;Ambac Financial Group
-AMBCW;;Ambac Financial Group
 AMCA;;iShares Russell 1000 Pure U.S. Revenue ETF
 AMCI;;AMCI Acquisition Corp.
-AMCIU;;AMCI Acquisition Corp.
-AMCIW;;AMCI Acquisition Corp.
 AMCX;;AMC Networks Inc.
 AMD;;Advanced Micro Devices
 AMED;;Amedisys Inc
 AMEH;;Apollo Medical Holdings
 AMGN;;Amgen Inc.
-AMHCU;;Amplitude Healthcare Acquisition Corporation
 AMKR;;Amkor Technology
 AMNB;;American National Bankshares
 AMOT;;Allied Motion Technologies
@@ -176,7 +156,6 @@ AMOV;;America Movil
 AMPH;;Amphastar Pharmaceuticals
 AMRB;;American River Bankshares
 AMRH;;Ameri Holdings
-AMRHW;;Ameri Holdings
 AMRK;;A-Mark Precious Metals
 AMRN;;Amarin Corporation plc
 AMRS;;Amyris
@@ -193,9 +172,6 @@ ANAB;;AnaptysBio
 ANAT;;American National Insurance Company
 ANCN;;Anchiano Therapeutics Ltd.
 ANDA;;Andina Acquisition Corp. III
-ANDAR;;Andina Acquisition Corp. III
-ANDAU;;Andina Acquisition Corp. III
-ANDAW;;Andina Acquisition Corp. III
 ANDE;;The Andersons
 ANGI;;ANGI Homeservices Inc.
 ANGL;;VanEck Vectors Fallen Angel High Yield Bond ETF
@@ -217,7 +193,6 @@ APLT;;Applied Therapeutics
 APM;;Aptorum Group Limited
 APOG;;Apogee Enterprises
 APOP;;Cellect Biotechnology Ltd.
-APOPW;;Cellect Biotechnology Ltd.
 APPF;;AppFolio
 APPN;;Appian Corporation
 APPS;;Digital Turbine
@@ -227,8 +202,6 @@ APTX;;Aptinyx Inc.
 APVO;;Aptevo Therapeutics Inc.
 APWC;;Asia Pacific Wire & Cable Corporation Limited
 APXT;;Apex Technology Acquisition Corporation
-APXTU;;Apex Technology Acquisition Corporation
-APXTW;;Apex Technology Acquisition Corporation
 APYX;;Apyx Medical Corporation
 AQB;;AquaBounty Technologies
 AQMS;;Aqua Metals
@@ -250,14 +223,12 @@ AROW;;Arrow Financial Corporation
 ARPO;;Aerpio Pharmaceuticals
 ARQL;;ArQule
 ARTL;;Artelo Biosciences
-ARTLW;;Artelo Biosciences
 ARTNA;;Artesian Resources Corporation
 ARTW;;Art&#39
 ARVN;;Arvinas
 ARWR;;Arrowhead Pharmaceuticals
 ARYA;;ARYA Sciences Acquisition Corp.
 ARYAU;;ARYA Sciences Acquisition Corp.
-ARYAW;;ARYA Sciences Acquisition Corp.
 ASET;;FlexShares Real Assets Allocation Index Fund
 ASFI;;Asta Funding
 ASLN;;ASLAN Pharmaceuticals Limited
@@ -323,206 +294,6 @@ AXSM;;Axsome Therapeutics
 AXTI;;AXT Inc
 AY;;Atlantica Yield plc
 AYTU;;Aytu BioScience
-AZPN;;Aspen Technology
-AZRX;;AzurRx BioPharma
-BAND;;Bandwidth Inc.
-BANF;;BancFirst Corporation
-BANFP;;BancFirst Corporation
-BANR;;Banner Corporation
-BANX;;StoneCastle Financial Corp
-BASI;;Bioanalytical Systems
-BATRA;;Liberty Media Corporation
-BATRK;;Liberty Media Corporation
-BBBY;;Bed Bath & Beyond Inc.
-BBC;;Virtus LifeSci Biotech Clinical Trials ETF
-BBCP;;Concrete Pumping Holdings
-BBGI;;Beasley Broadcast Group
-BBH;;VanEck Vectors Biotech ETF
-BBI;;Brickell Biotech
-BBIO;;BridgeBio Pharma
-BBP;;Virtus LifeSci Biotech Products ETF
-BBQ;;BBQ Holdings
-BBSI;;Barrett Business Services
-BCBP;;BCB Bancorp
-BCDA;;BioCardia
-BCDAW;;BioCardia
-BCEL;;Atreca
-BCLI;;Brainstorm Cell Therapeutics Inc.
-BCML;;BayCom Corp
-BCOM;;B Communications Ltd.
-BCOR;;Blucora
-BCOV;;Brightcove Inc.
-BCOW;;1895 Bancorp of Wisconsin
-BCPC;;Balchem Corporation
-BCRX;;BioCryst Pharmaceuticals
-BCTF;;Bancorp 34
-BCYC;;Bicycle Therapeutics plc
-BDGE;;Bridge Bancorp
-BDSI;;BioDelivery Sciences International
-BEAT;;BioTelemetry
-BECN;;Beacon Roofing Supply
-BELFA;;Bel Fuse Inc.
-BELFB;;Bel Fuse Inc.
-BFC;;Bank First Corporation
-BFIN;;BankFinancial Corporation
-BFIT;;Global X Health & Wellness Thematic ETF
-BFRA;;Biofrontera AG
-BFST;;Business First Bancshares
-BGCP;;BGC Partners
-BGFV;;Big 5 Sporting Goods Corporation
-BGNE;;BeiGene
-BGRN;;iShares Global Green Bond ETF
-BHAT;;Blue Hat Interactive Entertainment Technology
-BHF;;Brighthouse Financial
-BHFAL;;Brighthouse Financial
-BHFAP;;Brighthouse Financial
-BHTG;;BioHiTech Global
-BIB;;ProShares Ultra Nasdaq Biotechnology
-BICK;;First Trust BICK Index Fund
-BIDU;;Baidu
-BIIB;;Biogen Inc.
-BILI;;Bilibili Inc.
-BIMI;;BOQI International Medical Inc.
-BIOC;;Biocept
-BIOL;;Biolase
-BIOS;;Option Care Health
-BIS;;ProShares UltraShort Nasdaq Biotechnology
-BJK;;VanEck Vectors Gaming ETF
-BJRI;;BJ&#39
-BKCC;;BlackRock Capital Investment Corporation
-BKEP;;Blueknight Energy Partners L.P.
-BKEPP;;Blueknight Energy Partners L.P.
-BKNG;;Booking Holdings Inc.
-BKSC;;Bank of South Carolina Corp.
-BKYI;;BIO-key International
-BL;;BlackLine
-BLBD;;Blue Bird Corporation
-BLCM;;Bellicum Pharmaceuticals
-BLCN;;Reality Shares Nasdaq NextGen Economy ETF
-BLDP;;Ballard Power Systems
-BLDR;;Builders FirstSource
-BLFS;;BioLife Solutions
-BLIN          ;;Bridgeline Digital
-BLKB;;Blackbaud
-BLMN;;Bloomin&#39
-BLNK;;Blink Charging Co.
-BLNKW;;Blink Charging Co.
-BLPH;;Bellerophon Therapeutics
-BLRX;;BioLineRx Ltd.
-BLU;;BELLUS Health Inc.
-BLUE;;bluebird bio
-BMCH;;BMC Stock Holdings
-BMLP;;Bank Of Montreal
-BMRA;;Biomerica
-BMRC;;Bank of Marin Bancorp
-BMRN;;BioMarin Pharmaceutical Inc.
-BMTC;;Bryn Mawr Bank Corporation
-BND;;Vanguard Total Bond Market ETF
-BNDW;;Vanguard Total World Bond ETF
-BNDX;;Vanguard Total International Bond ETF
-BNFT;;Benefitfocus
-BNGO;;Bionano Genomics
-BNGOW;;Bionano Genomics
-BNSO;;Bonso Electronics International
-BNTC;;Benitec Biopharma Limited
-BNTCW;;Benitec Biopharma Limited
-BNTX;;BioNTech SE
-BOCH;;Bank of Commerce Holdings (CA)
-BOKF;;BOK Financial Corporation
-BOKFL;;BOK Financial Corporation
-BOLD;;Audentes Therapeutics
-BOMN;;Boston Omaha Corporation
-BOOM;;DMC Global Inc.
-BOSC;;B.O.S. Better Online Solutions
-BOTJ;;Bank of the James Financial Group
-BOTZ;;Global X Robotics & Artificial Intelligence ETF
-BOXL;;Boxlight Corporation
-BPFH;;Boston Private Financial Holdings
-BPMC;;Blueprint Medicines Corporation
-BPOP;;Popular
-BPOPM;;Popular
-BPOPN;;Popular
-BPR;;Brookfield Property REIT Inc.
-BPRAP;;Brookfield Property REIT Inc.
-BPRN;;The Bank of Princeton
-BPTH;;Bio-Path Holdings
-BPY;;Brookfield Property Partners L.P.
-BPYPO;;Brookfield Property Partners L.P.
-BPYPP;;Brookfield Property Partners L.P.
-BREW;;Craft Brew Alliance
-BRID;;Bridgford Foods Corporation
-BRKL;;Brookline Bancorp
-BRKR;;Bruker Corporation
-BRKS;;Brooks Automation
-BROG;;Brooge Holdings Limited 
-BROGW;;Brooge Holdings Limited 
-BRP;;BRP Group
-BRPA;;Big Rock Partners Acquisition Corp.
-BRPAR;;Big Rock Partners Acquisition Corp.
-BRPAU;;Big Rock Partners Acquisition Corp.
-BRPAW;;Big Rock Partners Acquisition Corp.
-BRQS;;Borqs Technologies
-BRY;;Berry Petroleum Corporation
-BSAE;;Invesco BulletShares 2021 USD Emerging Markets Debt ETF
-BSBE;;Invesco BulletShares 2022 USD Emerging Markets Debt ETF
-BSCE;;Invesco BulletShares 2023 USD Emerging Markets Debt ETF
-BSCK;;Invesco BulletShares 2020 Corporate Bond ETF
-BSCL;;Invesco BulletShares 2021 Corporate Bond ETF
-BSCM;;Invesco BulletShares 2022 Corporate Bond ETF
-BSCN;;Invesco BulletShares 2023 Corporate Bond ETF
-BSCO;;Invesco BulletShares 2024 Corporate Bond ETF
-BSCP;;Invesco BulletShares 2025 Corporate Bond ETF
-BSCQ;;Invesco BulletShares 2026 Corporate Bond ETF
-BSCR;;Invesco BulletShares 2027 Corporate Bond ETF
-BSCS;;Invesco BulletShares 2028 Corporate Bond ETF
-BSCT;;Invesco BulletShares 2029 Corporate Bond ETF
-BSDE;;Invesco BulletShares 2024 USD Emerging Markets Debt ETF
-BSET;;Bassett Furniture Industries
-BSGM;;BioSig Technologies
-BSJK;;Invesco BulletShares 2020 High Yield Corporate Bond ETF
-BSJL;;Invesco BulletShares 2021 High Yield Corporate Bond ETF
-BSJM;;Invesco BulletShares 2022 High Yield Corporate Bond ETF
-BSJN;;Invesco BulletShares 2023 High Yield Corporate Bond ETF
-BSJO;;Invesco BulletShares 2024 High Yield Corporate Bond ETF
-BSJP;;Invesco BulletShares 2025 High Yield Corporate Bond ETF
-BSJQ;;Invesco BulletShares 2026 High Yield Corporate Bond ETF
-BSJR;;Invesco BulletShares 2027 High Yield Corporate Bond ETF
-BSML;;Invesco BulletShares 2021 Municipal Bond ETF
-BSMM;;Invesco BulletShares 2022 Municipal Bond ETF
-BSMN;;Invesco BulletShares 2023 Municipal Bond ETF
-BSMO;;Invesco BulletShares 2024 Municipal Bond ETF
-BSMP;;Invesco BulletShares 2025 Municipal Bond ETF
-BSMQ;;Invesco BulletShares 2026 Municipal Bond ETF
-BSMR;;Invesco BulletShares 2027 Municipal Bond ETF
-BSMS;;Invesco BulletShares 2028 Municipal Bond ETF
-BSMT;;Invesco BulletShares 2029 Municipal Bond ETF
-BSQR;;BSQUARE Corporation
-BSRR;;Sierra Bancorp
-BSTC;;BioSpecifics Technologies Corp
-BSVN;;Bank7 Corp.
-BTAI;;BioXcel Therapeutics
-BTEC;;Principal Healthcare Innovators Index ETF
-BUG;;Global X Cybersecurity ETF
-BURG;;Chanticleer Holdings
-BUSE;;First Busey Corporation
-BVSN;;BroadVision
-BVXV;;BiondVax Pharmaceuticals Ltd.
-BVXVW;;BiondVax Pharmaceuticals Ltd.
-BWAY;;Brainsway Ltd.
-BWB;;Bridgewater Bancshares
-BWEN;;Broadwind Energy
-BWFG;;Bankwell Financial Group
-BWMC;;Boxwood Merger Corp.
-BWMCU;;Boxwood Merger Corp.
-BWMCW;;Boxwood Merger Corp.
-BXRX;;Baudax Bio
-BYFC;;Broadway Financial Corporation
-BYND;;Beyond Meat
-BYSI;;BeyondSpring
-BZUN;;Baozun Inc.
-CAAS;;China Automotive Systems
-CABA;;Cabaletta Bio
-CAC;;Camden National Corporation
 CACC;;Credit Acceptance Corporation
 CACG;;ClearBridge All Cap Growth ETF
 CAKE;;The Cheesecake Factory Incorporated
@@ -604,7 +375,6 @@ CERS;;Cerus Corporation
 CETV;;Central European Media Enterprises Ltd.
 CETX;;Cemtrex Inc.
 CETXP;;Cemtrex Inc.
-CETXW;;Cemtrex Inc.
 CEVA;;CEVA
 CEY;;VictoryShares Emerging Market High Div Volatility Wtd ETF
 CEZ;;VictoryShares Emerging Market Volatility Wtd ETF
@@ -613,8 +383,6 @@ CFB;;CrossFirst Bankshares
 CFBI;;Community First Bancshares
 CFBK;;Central Federal Corporation
 CFFA;;CF Finance Acquisition Corp.
-CFFAU;;CF Finance Acquisition Corp.
-CFFAW;;CF Finance Acquisition Corp.
 CFFI;;C&F Financial Corporation
 CFFN;;Capitol Federal Financial
 CFMS;;ConforMIS
@@ -631,8 +399,6 @@ CHCO;;City Holding Company
 CHDN;;Churchill Downs
 CHEF;;The Chefs&#39
 CHEK;;Check-Cap Ltd.
-CHEKW;;Check-Cap Ltd.
-CHEKZ;;Check-Cap Ltd.
 CHFS;;CHF Solutions
 CHI;;Calamos Convertible Opportunities and Income Fund
 CHIC;;Global X Funds Global X MSCI China Communication Services ETF
@@ -643,7 +409,6 @@ CHNA;;Loncar China BioPharma ETF
 CHNG;;Change Healthcare Inc.
 CHNGU;;Change Healthcare Inc.
 CHNR;;China Natural Resources
-CHPMU;;CHP Merger Corp.
 CHRS;;Coherus BioSciences
 CHRW;;C.H. Robinson Worldwide
 CHSCL;;CHS Inc
@@ -661,7 +426,6 @@ CIDM;;Cinedigm Corp
 CIFS;;China Internet Nationwide Financial Services Inc.
 CIGI;;Colliers International Group Inc. 
 CIH;;China Index Holdings Limited
-CIICU;;CIIG Merger Corp.
 CIL;;VictoryShares International Volatility Wtd ETF
 CINF;;Cincinnati Financial Corporation
 CIVB;;Civista Bancshares
@@ -684,7 +448,6 @@ CLNE;;Clean Energy Fuels Corp.
 CLOU;;Global X Cloud Computing ETF
 CLPS;;CLPS Incorporation
 CLRB;;Cellectar Biosciences
-CLRBZ;;Cellectar Biosciences
 CLRG;;IQ Chaikin U.S. Large Cap ETF
 CLRO;;ClearOne
 CLSD;;Clearside Biomedical
@@ -743,7 +506,6 @@ COWN;;Cowen Inc.
 COWNL;;Cowen Inc.
 COWNZ;;Cowen Inc.
 CPAA;;Conyers Park II Acquisition Corp.
-CPAAU;;Conyers Park II Acquisition Corp.
 CPAAW;;Conyers Park II Acquisition Corp.
 CPAH;;CounterPath Corporation
 CPHC;;Canterbury Park Holding Corporation
@@ -765,7 +527,6 @@ CREE;;Cree
 CREG;;China Recycling Energy Corporation
 CRESY;;Cresud S.A.C.I.F. y A.
 CREX;;Creative Realities
-CREXW;;Creative Realities
 CRIS;;Curis
 CRMT;;America&#39
 CRNC;;Cerence Inc.
@@ -774,8 +535,6 @@ CRNX;;Crinetics Pharmaceuticals
 CRON;;Cronos Group Inc.
 CROX;;Crocs
 CRSA;;Crescent Acquisition Corp
-CRSAU;;Crescent Acquisition Corp
-CRSAW;;Crescent Acquisition Corp
 CRSP;;CRISPR Therapeutics AG
 CRTO;;Criteo S.A.
 CRTX;;Cortexyme
@@ -808,8 +567,6 @@ CSWCL;;Capital Southwest Corporation
 CSWI;;CSW Industrials
 CSX;;CSX Corporation
 CTAC;;ChaSerg Technology Acquisition Corp.
-CTACU;;ChaSerg Technology Acquisition Corp.
-CTACW;;ChaSerg Technology Acquisition Corp.
 CTAS;;Cintas Corporation
 CTBI;;Community Trust Bancorp
 CTG;;Computer Task Group
@@ -824,7 +581,6 @@ CTRN;;Citi Trends
 CTSH;;Cognizant Technology Solutions Corporation
 CTSO;;Cytosorbents Corporation
 CTXR;;Citius Pharmaceuticals
-CTXRW;;Citius Pharmaceuticals
 CTXS;;Citrix Systems
 CUBA;;The Herzfeld Caribbean Basin Fund
 CUE;;Cue Biopharma
@@ -857,7 +613,6 @@ CYCN;;Cyclerion Therapeutics
 CYOU;;Changyou.com Limited
 CYRN;;CYREN Ltd.
 CYRX;;CryoPort
-CYRXW;;CryoPort
 CYTK;;Cytokinetics
 CZNC;;Citizens & Northern Corp
 CZR;;Caesars Entertainment Corporation
@@ -875,8 +630,6 @@ DCOM;;Dime Community Bancshares
 DCPH;;Deciphera Pharmaceuticals
 DDIV;;First Trust Dorsey Wright Momentum & Dividend ETF
 DDMX;;DD3 Acquisition Corp.
-DDMXU;;DD3 Acquisition Corp.
-DDMXW;;DD3 Acquisition Corp.
 DDOG;;Datadog
 DEAC;;Diamond Eagle Acquisition Corp.
 DEACU;;Diamond Eagle Acquisition Corp.
@@ -885,7 +638,6 @@ DENN;;Denny&#39
 DERM;;Dermira
 DFFN;;Diffusion Pharmaceuticals Inc.
 DFNL;;Davis Select Financial ETF
-DFNSU;;LGL Systems Acquisition Corp.
 DFVL;;Barclays PLC
 DFVS;;Barclays PLC
 DGICA;;Donegal Group
@@ -910,7 +662,6 @@ DJCO;;Daily Journal Corp. (S.C.)
 DLBS;;Barclays PLC
 DLHC;;DLH Holdings Corp.
 DLPN;;Dolphin Entertainment
-DLPNW;;Dolphin Entertainment
 DLTH;;Duluth Holdings Inc.
 DLTR;;Dollar Tree
 DMAC;;DiaMedica Therapeutics Inc.
@@ -929,19 +680,15 @@ DORM;;Dorman Products
 DOX;;Amdocs Limited
 DOYU;;DouYu International Holdings Limited
 DPHC;;DiamondPeak Holdings Corp.
-DPHCU;;DiamondPeak Holdings Corp.
-DPHCW;;DiamondPeak Holdings Corp.
 DRAD;;Digirad Corporation
 DRADP;;Digirad Corporation
 DRIO;;DarioHealth Corp.
-DRIOW;;DarioHealth Corp.
 DRIV;;Global X Autonomous & Electric Vehicles ETF
 DRNA;;Dicerna Pharmaceuticals
 DRRX;;DURECT Corporation
 DRTT;;DIRTT Environmental Solutions Ltd.
 DSGX;;The Descartes Systems Group Inc.
 DSKE;;Daseke
-DSKEW;;Daseke
 DSLV;;Credit Suisse AG
 DSPG;;DSP Group
 DSWL;;Deswell Industries
@@ -994,7 +741,6 @@ EBSB;;Meridian Bancorp
 EBTC;;Enterprise Bancorp Inc
 ECHO;;Echo Global Logistics
 ECOL;;US Ecology
-ECOLW;;US Ecology
 ECOR;;electroCore
 ECOW;;Pacer Emerging Markets Cash Cows 100 ETF
 ECPG;;Encore Capital Group Inc
@@ -1004,8 +750,6 @@ EDNT;;Edison Nation
 EDRY;;EuroDry Ltd.
 EDSA;;Edesa Biotech
 EDTX;;EdtechX Holdings Acquisition Corp.
-EDTXU;;EdtechX Holdings Acquisition Corp.
-EDTXW;;EdtechX Holdings Acquisition Corp.
 EDUC;;Educational Development Corporation
 EEFT;;Euronet Worldwide
 EEMA;;iShares MSCI Emerging Markets Asia ETF
@@ -1047,7 +791,6 @@ ENT;;Global Eagle Entertainment Inc.
 ENTA;;Enanta Pharmaceuticals
 ENTG;;Entegris
 ENTX;;Entera Bio Ltd.
-ENTXW;;Entera Bio Ltd.
 ENZL;;iShares MSCI New Zealand ETF
 EOLS;;Evolus
 EPAY;;Bottomline Technologies
@@ -1081,7 +824,6 @@ ESQ;;Esquire Financial Holdings
 ESSA;;ESSA Bancorp
 ESTA;;Establishment Labs Holdings Inc.
 ESTR;;Estre Ambiental
-ESTRW;;Estre Ambiental
 ESXB;;Community Bankers Trust Corporation.
 ETFC;;E*TRADE Financial Corporation
 ETNB;;89bio
@@ -1092,17 +834,13 @@ EUFN;;iShares MSCI Europe Financials Sector Index Fund
 EVBG;;Everbridge
 EVER;;EverQuote
 EVFM;;Evofem Biosciences
-EVGBC;;Eaton Vance NextShares Trust
 EVGN;;Evogene Ltd.
 EVK;;Ever-Glory International Group
-EVLMC;;Eaton Vance NextShares Trust II
 EVLO;;Evelo Biosciences
 EVOK;;Evoke Pharma
 EVOL;;Evolving Systems
 EVOP;;EVO Payments
 EVSI;;Envision Solar International
-EVSIW;;Envision Solar International
-EVSTC;;Eaton Vance NextShares Trust
 EWBC;;East West Bancorp
 EWJE;;iShares MSCI Japan Equal Weighted ETF
 EWJV;;iShares MSCI Japan Value ETF
@@ -1113,8 +851,6 @@ EXEL;;Exelixis
 EXFO;;EXFO Inc
 EXLS;;ExlService Holdings
 EXPC;;Experience Investment Corp.
-EXPCU;;Experience Investment Corp.
-EXPCW;;Experience Investment Corp.
 EXPD;;Expeditors International of Washington
 EXPE;;Expedia Group
 EXPI;;eXp World Holdings
@@ -1122,7 +858,6 @@ EXPO;;Exponent
 EXTR;;Extreme Networks
 EYE;;National Vision Holdings
 EYEG;;Eyegate Pharmaceuticals
-EYEGW;;Eyegate Pharmaceuticals
 EYEN;;Eyenovia
 EYES;;Second Sight Medical Products
 EYESW;;Second Sight Medical Products
@@ -1220,11 +955,7 @@ FLIC;;The First of Long Island Corporation
 FLIR;;FLIR Systems
 FLL;;Full House Resorts
 FLLC;;Fellazo Inc.
-FLLCR;;Fellazo Inc.
-FLLCU;;Fellazo Inc.
-FLLCW;;Fellazo Inc.
 FLMN;;Falcon Minerals Corporation
-FLMNW;;Falcon Minerals Corporation
 FLN;;First Trust Latin America AlphaDEX Fund
 FLNT;;Fluent
 FLWS;;1-800-FLOWERS.COM
@@ -1235,8 +966,6 @@ FMB;;First Trust Managed Municipal ETF
 FMBH;;First Mid Bancshares
 FMBI;;First Midwest Bancorp
 FMCI;;Forum Merger II Corporation
-FMCIU;;Forum Merger II Corporation
-FMCIW;;Forum Merger II Corporation
 FMHI;;First Trust Municipal High Income ETF
 FMK;;First Trust Mega Cap AlphaDEX Fund
 FMNB;;Farmers National Banc Corp.
@@ -1264,7 +993,6 @@ FOXA;;Fox Corporation
 FOXF;;Fox Factory Holding Corp.
 FPA;;First Trust Asia Pacific Ex-Japan AlphaDEX Fund
 FPAY;;FlexShopper
-FPAYW;;FlexShopper
 FPRX;;Five Prime Therapeutics
 FPXE;;First Trust IPOX Europe Equity Opportunities ETF
 FPXI;;First Trust International Equity Opportunities ETF
@@ -1288,15 +1016,11 @@ FSEA;;First Seacoast Bancorp
 FSFG;;First Savings Financial Group
 FSLR;;First Solar
 FSRV;;FinServ Acquisition Corp.
-FSRVU;;FinServ Acquisition Corp.
-FSRVW;;FinServ Acquisition Corp.
 FSTR;;L.B. Foster Company
 FSV;;FirstService Corporation
 FSZ;;First Trust Switzerland AlphaDEX Fund
 FTA;;First Trust Large Cap Value AlphaDEX Fund
 FTAC;;FinTech Acquisition Corp. III
-FTACU;;FinTech Acquisition Corp. III
-FTACW;;FinTech Acquisition Corp. III
 FTAG;;First Trust Indxx Global Agriculture ETF
 FTC;;First Trust Large Cap Growth AlphaDEX Fund
 FTCS;;First Trust Capital Strength ETF
@@ -1354,7 +1078,6 @@ GBLIL;;Global Indemnity Limited
 GBLIZ;;Global Indemnity Limited
 GBT;;Global Blood Therapeutics
 GCBC;;Greene County Bancorp
-GCVRZ;;Sanofi
 GDEN;;Golden Entertainment
 GDS;;GDS Holdings Limited
 GEC;;Great Elm Capital Group
@@ -1401,8 +1124,6 @@ GLYC;;GlycoMimetics
 GMAB;;Genmab A/S
 GMDA;;Gamida Cell Ltd.
 GMHI;;Gores Metropoulos
-GMHIU;;Gores Metropoulos
-GMHIW;;Gores Metropoulos
 GMLP;;Golar LNG Partners LP
 GMLPP;;Golar LNG Partners LP
 GNCA;;Genocea Biosciences
@@ -1428,8 +1149,6 @@ GOOG;;Alphabet Inc.
 GOOGL;;Alphabet Inc.
 GOSS;;Gossamer Bio
 GPAQ;;Gordon Pointe Acquisition Corp.
-GPAQU;;Gordon Pointe Acquisition Corp.
-GPAQW;;Gordon Pointe Acquisition Corp.
 GPOR;;Gulfport Energy Corporation
 GPP;;Green Plains Partners LP
 GPRE;;Green Plains
@@ -1442,14 +1161,9 @@ GRIN;;Grindrod Shipping Holdings Ltd.
 GRMN;;Garmin Ltd.
 GRNQ;;Greenpro Capital Corp.
 GRNV;;GreenVision Acquisition Corp
-GRNVR;;GreenVision Acquisition Corp
-GRNVU;;GreenVision Acquisition Corp
-GRNVW;;GreenVision Acquisition Corp
 GROW;;U.S. Global Investors
 GRPN;;Groupon
 GRSH;;Gores Holdings III
-GRSHU;;Gores Holdings III
-GRSHW;;Gores Holdings III
 GRTS;;Gritstone Oncology
 GRTX;;Galera Therapeutics
 GRVY;;GRAVITY Co.
@@ -1473,8 +1187,6 @@ GWGH;;GWG Holdings
 GWPH;;GW Pharmaceuticals Plc
 GWRS;;Global Water Resources
 GXGX;;GX Acquisition Corp.
-GXGXU;;GX Acquisition Corp.
-GXGXW;;GX Acquisition Corp.
 GXTG;;Global X Thematic Growth ETF
 GYRO;;Gyrodyne 
 HA;;Hawaiian Holdings
@@ -1497,17 +1209,12 @@ HBNC;;Horizon Bancorp
 HBP;;Huttig Building Products
 HBT;;HBT Financial
 HCAC;;Hennessy Capital Acquisition Corp. IV
-HCACU;;Hennessy Capital Acquisition Corp. IV
-HCACW;;Hennessy Capital Acquisition Corp. IV
 HCAP;;Harvest Capital Credit Corporation
 HCAPZ;;Harvest Capital Credit Corporation
 HCAT;;Health Catalyst
 HCCH;;HL Acquisitions Corp.
-HCCHR;;HL Acquisitions Corp.
-HCCHU;;HL Acquisitions Corp.
 HCCHW;;HL Acquisitions Corp.
 HCCI;;Heritage-Crystal Clean
-HCCOU;;Healthcare Merger Corp.
 HCKT;;The Hackett Group
 HCM;;Hutchison China MediTech Limited
 HCSG;;Healthcare Services Group
@@ -1526,9 +1233,6 @@ HFFG;;HF Foods Group Inc.
 HFWA;;Heritage Financial Corporation
 HGSH;;China HGS Real Estate
 HHHH;;Wealthbridge Acquisition Limited
-HHHHR;;Wealthbridge Acquisition Limited
-HHHHU;;Wealthbridge Acquisition Limited
-HHHHW;;Wealthbridge Acquisition Limited
 HHR;;HeadHunter Group PLC
 HHT;;Huitao Technology Co.
 HIBB;;Hibbett Sports
@@ -1580,7 +1284,6 @@ HTIA;;Healthcare Trust
 HTLD;;Heartland Express
 HTLF;;Heartland Financial USA
 HUBG;;Hub Group
-HUGE;;FSD Pharma Inc.
 HURC;;Hurco Companies
 HURN;;Huron Consulting Group Inc.
 HVBC;;HV Bancorp
@@ -1591,8 +1294,6 @@ HWCPL;;Hancock Whitney Corporation
 HWKN;;Hawkins
 HX;;Hexindai Inc.
 HYAC;;Haymaker Acquisition Corp. II
-HYACU;;Haymaker Acquisition Corp. II
-HYACW;;Haymaker Acquisition Corp. II
 HYLS;;First Trust High Yield Long/Short ETF
 HYND;;WisdomTree Negative Duration High Yield Bond Fund
 HYRE;;HyreCar Inc.
@@ -1660,7 +1361,6 @@ IKNX;;Ikonics Corporation
 ILMN;;Illumina
 ILPT;;Industrial Logistics Properties Trust
 IMAC;;IMAC Holdings
-IMACW;;IMAC Holdings
 IMBI;;iMedia Brands
 IMGN;;ImmunoGen
 IMKTA;;Ingles Markets
@@ -1669,12 +1369,10 @@ IMMR;;Immersion Corporation
 IMMU;;Immunomedics
 IMOS;;ChipMOS TECHNOLOGIES INC.
 IMRN;;Immuron Limited
-IMRNW;;Immuron Limited
 IMTE;;Integrated Media Technology Limited
 IMUX;;Immunic
 IMV;;IMV Inc.
 IMVT;;Immunovant
-IMVTU;;Immunovant
 IMVTW;;Immunovant
 IMXI;;International Money Express
 INAP;;Internap Corporation
@@ -1700,8 +1398,6 @@ INSE;;Inspired Entertainment
 INSG;;Inseego Corp.
 INSM;;Insmed
 INSU;;Insurance Acquisition Corp.
-INSUU;;Insurance Acquisition Corp.
-INSUW;;Insurance Acquisition Corp.
 INTC;;Intel Corporation
 INTG;;The Intergroup Corporation
 INTL;;INTL FCStone Inc.
@@ -1773,9 +1469,6 @@ JCTCF;;Jewett-Cameron Trading Company
 JD;;JD.com
 JFIN;;Jiayin Group Inc.
 JFK;;8i Enterprises Acquisition Corp
-JFKKR;;8i Enterprises Acquisition Corp
-JFKKU;;8i Enterprises Acquisition Corp
-JFKKW;;8i Enterprises Acquisition Corp
 JFU;;9F Inc.
 JG;;Aurora Mobile Limited
 JJSF;;J & J Snack Foods Corp.
@@ -1800,9 +1493,6 @@ KALU;;Kaiser Aluminum Corporation
 KALV;;KalVista Pharmaceuticals
 KBAL;;Kimball International
 KBLM;;KBL Merger Corp. IV
-KBLMR;;KBL Merger Corp. IV
-KBLMU;;KBL Merger Corp. IV
-KBLMW;;KBL Merger Corp. IV
 KBSF;;KBS Fashion Group Limited
 KBWB;;Invesco KBW Bank ETF
 KBWD;;Invesco KBW High Dividend Yield Financial ETF
@@ -1815,7 +1505,6 @@ KELYA;;Kelly Services
 KELYB;;Kelly Services
 KEQU;;Kewaunee Scientific Corporation
 KERN;;Akerna Corp.
-KERNW;;Akerna Corp.
 KFFB;;Kentucky First Federal Bancorp
 KFRC;;Kforce
 KGJI;;Kingold Jewelry Inc.
@@ -1848,7 +1537,6 @@ KRYS;;Krystal Biotech
 KTCC;;Key Tronic Corporation
 KTOS;;Kratos Defense & Security Solutions
 KTOV;;Kitov Pharma Ltd.
-KTOVW;;Kitov Pharma Ltd.
 KURA;;Kura Oncology
 KVHI;;KVH Industries
 KWEB;;KraneShares Trust KraneShares CSI China Internet ETF
@@ -1856,8 +1544,6 @@ KXIN;;Kaixin Auto Holdings
 KZIA;;Kazia Therapeutics Limited
 KZR;;Kezar Life Sciences
 LACQ;;Leisure Acquisition Corp.
-LACQU;;Leisure Acquisition Corp.
-LACQW;;Leisure Acquisition Corp.
 LAKE;;Lakeland Industries
 LAMR;;Lamar Advertising Company
 LANC;;Lancaster Colony Corporation
@@ -1866,8 +1552,6 @@ LANDP;;Gladstone Land Corporation
 LARK;;Landmark Bancorp Inc.
 LASR;;nLIGHT
 LATN;;Union Acquisition Corp. II
-LATNU;;Union Acquisition Corp. II
-LATNW;;Union Acquisition Corp. II
 LAUR;;Laureate Education
 LAWS;;Lawson Products
 LAZY;;Lazydays Holdings
@@ -1879,8 +1563,6 @@ LBTYA;;Liberty Global plc
 LBTYB;;Liberty Global plc
 LBTYK;;Liberty Global plc
 LCA;;Landcadia Holdings II
-LCAHU;;Landcadia Holdings II
-LCAHW;;Landcadia Holdings II
 LCNB;;LCNB Corporation
 LCUT;;Lifetime Brands
 LDRI;;Invesco LadderRite 0-5 Year Corporate Bond ETF
@@ -1892,8 +1574,6 @@ LEGH;;Legacy Housing Corporation
 LEGR;;First Trust Indxx Innovative Transaction & Process ETF
 LEVL;;Level One Bancorp
 LFAC;;LF Capital Acquistion Corp.
-LFACU;;LF Capital Acquistion Corp.
-LFACW;;LF Capital Acquistion Corp.
 LFUS;;Littelfuse
 LFVN;;Lifevantage Corporation
 LGIH;;LGI Homes
@@ -1907,7 +1587,6 @@ LIND;;Lindblad Expeditions Holdings Inc.
 LIQT;;LiqTech International
 LITE;;Lumentum Holdings Inc.
 LIVE;;Live Ventures Incorporated
-LIVKU;;LIV Capital Acquisition Corp.
 LIVN;;LivaNova PLC
 LIVX;;LiveXLive Media
 LJPC;;La Jolla Pharmaceutical Company
@@ -1923,7 +1602,6 @@ LMAT;;LeMaitre Vascular
 LMB;;Limbach Holdings
 LMBS;;First Trust Low Duration Opportunities ETF
 LMFA;;LM Funding America
-LMFAW;;LM Funding America
 LMNL;;Liminal BioSciences Inc.
 LMNR;;Limoneira Co
 LMNX;;Luminex Corporation
@@ -1938,9 +1616,6 @@ LNGR;;Global X Longevity Thematic ETF
 LNT;;Alliant Energy Corporation
 LNTH;;Lantheus Holdings
 LOAC;;Longevity Acquisition Corporation
-LOACR;;Longevity Acquisition Corporation
-LOACU;;Longevity Acquisition Corporation
-LOACW;;Longevity Acquisition Corporation
 LOAN;;Manhattan Bridge Capital
 LOB;;Live Oak Bancshares
 LOCO;;El Pollo Loco Holdings
@@ -2000,7 +1675,6 @@ MBIN;;Merchants Bancorp
 MBINO;;Merchants Bancorp
 MBINP;;Merchants Bancorp
 MBIO;;Mustang Bio
-MBNKP;;Medallion Bank
 MBOT;;Microbot Medical Inc. 
 MBRX;;Moleculin Biotech
 MBSD;;FlexShares Disciplined Duration MBS Index Fund
@@ -2015,14 +1689,12 @@ MCHI;;iShares MSCI China ETF
 MCHP;;Microchip Technology Incorporated
 MCHX;;Marchex
 MCMJ;;Merida Merger Corp. I
-MCMJW;;Merida Merger Corp. I
 MCRB;;Seres Therapeutics
 MCRI;;Monarch Casino & Resort
 MDB;;MongoDB
 MDCA;;MDC Partners Inc.
 MDGL;;Madrigal Pharmaceuticals
 MDGS;;Medigus Ltd.
-MDGSW;;Medigus Ltd.
 MDIAV;;Mediaco Holding Inc.
 MDIV;;First Trust Multi-Asset Diversified Income Index Fund
 MDJH;;MDJM LTD
@@ -2084,8 +1756,6 @@ MMLP;;Martin Midstream Partners L.P.
 MMSI;;Merit Medical Systems
 MMYT;;MakeMyTrip Limited
 MNCL;;Monocle Acquisition Corporation
-MNCLU;;Monocle Acquisition Corporation
-MNCLW;;Monocle Acquisition Corporation
 MNDO;;MIND C.T.I. Ltd.
 MNKD;;MannKind Corporation
 MNLO;;Menlo Therapeutics Inc.
@@ -2150,8 +1820,6 @@ MTSI;;MACOM Technology Solutions Holdings
 MTSL;;MER Telemanagement Solutions Ltd.
 MU;;Micron Technology
 MUDS;;Mudrick Capital Acquisition Corporation
-MUDSU;;Mudrick Capital Acquisition Corporation
-MUDSW;;Mudrick Capital Acquisition Corporation
 MVBF;;MVB Financial Corp.
 MVIS;;Microvision
 MWK;;Mohawk Group Holdings
@@ -2188,11 +1856,8 @@ NCTY;;The9 Limited
 NDAQ;;Nasdaq
 NDLS;;Noodles & Company
 NDRA;;ENDRA Life Sciences Inc.
-NDRAW;;ENDRA Life Sciences Inc.
 NDSN;;Nordson Corporation
 NEBU;;Nebula Acquisition Corporation
-NEBUU;;Nebula Acquisition Corporation
-NEBUW;;Nebula Acquisition Corporation
 NEO;;NeoGenomics
 NEOG;;Neogen Corporation
 NEON;;Neonode Inc.
@@ -2201,7 +1866,6 @@ NEPH;;Nephros
 NEPT;;Neptune Wellness Solutions Inc.
 NERV;;Minerva Neurosciences
 NESR;;National Energy Services Reunited Corp.
-NESRW;;National Energy Services Reunited Corp.
 NETE;;Net Element
 NEWA;;Newater Technology
 NEWT;;Newtek Business Services Corp.
@@ -2211,8 +1875,6 @@ NEXT;;NextDecade Corporation
 NFBK;;Northfield Bancorp
 NFE;;New Fortress Energy LLC
 NFIN;;Netfin Acquisition Corp.
-NFINU;;Netfin Acquisition Corp.
-NFINW;;Netfin Acquisition Corp.
 NFLX;;Netflix
 NFTY;;First Trust India Nifty 50 Equal Weight ETF
 NGHC;;National General Holdings Corp
@@ -2223,7 +1885,6 @@ NGHCZ;;National General Holdings Corp
 NGM;;NGM Biopharmaceuticals
 NH;;NantHealth
 NHLD;;National Holdings Corporation
-NHLDW;;National Holdings Corporation
 NHTC;;Natural Health Trends Corp.
 NICE;;NICE Ltd
 NICK;;Nicholas Financial
@@ -2244,8 +1905,6 @@ NODK;;NI Holdings
 NOVN;;Novan
 NOVT;;Novanta Inc.
 NPA;;New Providence Acquisition Corp.
-NPAUU;;New Providence Acquisition Corp.
-NPAWW;;New Providence Acquisition Corp.
 NRBO;;NeuroBo Pharmaceuticals
 NRC;;National Research Corporation
 NRIM;;Northrim BanCorp Inc
@@ -2271,7 +1930,6 @@ NTUS;;Natus Medical Incorporated
 NTWK;;NetSol Technologies Inc.
 NUAN;;Nuance Communications
 NURO;;NeuroMetrix
-NUROW;;NeuroMetrix
 NUVA;;NuVasive
 NVAX;;Novavax
 NVCN;;Neovasc Inc.
@@ -2347,15 +2005,11 @@ ONCT;;Oncternal Therapeutics
 ONCY;;Oncolytics Biotech Inc.
 ONEQ;;Fidelity Nasdaq Composite Index Tracking Stock
 ONTX;;Onconova Therapeutics
-ONTXW;;Onconova Therapeutics
 ONVO;;Organovo Holdings
 OPB;;Opus Bank
 OPBK;;OP Bancorp
 OPES;;Opes Acquisition Corp.
-OPESU;;Opes Acquisition Corp.
-OPESW;;Opes Acquisition Corp.
 OPGN;;OpGen
-OPGNW;;OpGen
 OPHC;;OptimumBank Holdings
 OPI;;Office Properties Income Trust
 OPINI;;Office Properties Income Trust
@@ -2375,9 +2029,6 @@ ORLY;;O&#39
 ORMP;;Oramed Pharmaceuticals Inc.
 ORRF;;Orrstown Financial Services Inc
 ORSN;;Orisun Acquisition Corp.
-ORSNR;;Orisun Acquisition Corp.
-ORSNU;;Orisun Acquisition Corp.
-ORSNW;;Orisun Acquisition Corp.
 ORTX;;Orchard Therapeutics plc
 OSBC;;Old Second Bancorp
 OSBCP;;Old Second Bancorp
@@ -2393,14 +2044,12 @@ OTEL;;Otelco Inc.
 OTEX;;Open Text Corporation
 OTIC;;Otonomy
 OTLK;;Outlook Therapeutics
-OTLKW;;Outlook Therapeutics
 OTTR;;Otter Tail Corporation
 OTTW;;Ottawa Bancorp
 OVBC;;Ohio Valley Banc Corp.
 OVID;;Ovid Therapeutics Inc.
 OVLY;;Oak Valley Bancorp (CA)
 OXBR;;Oxbridge Re Holdings Limited
-OXBRW;;Oxbridge Re Holdings Limited
 OXFD;;Oxford Immunotec Global PLC
 OXLC;;Oxford Lane Capital Corp.
 OXLCM;;Oxford Lane Capital Corp.
@@ -2411,21 +2060,15 @@ OXSQZ;;Oxford Square Capital Corp.
 OYST;;Oyster Point Pharma
 OZK;;Bank OZK
 PAAC;;Proficient Alpha Acquisition Corp.
-PAACR;;Proficient Alpha Acquisition Corp.
-PAACU;;Proficient Alpha Acquisition Corp.
-PAACW;;Proficient Alpha Acquisition Corp.
 PAAS;;Pan American Silver Corp.
 PACB;;Pacific Biosciences of California
 PACQ;;Pure Acquisition Corp.
-PACQU;;Pure Acquisition Corp.
-PACQW;;Pure Acquisition Corp.
 PACW;;PacWest Bancorp
 PAHC;;Phibro Animal Health Corporation
 PANL;;Pangaea Logistics Solutions Ltd.
 PATI;;Patriot Transportation Holding
 PATK;;Patrick Industries
 PAVM;;PAVmed Inc.
-PAVMW;;PAVmed Inc.
 PAVMZ;;PAVmed Inc.
 PAYS;;Paysign
 PAYX;;Paychex
@@ -2496,10 +2139,8 @@ PHAS;;PhaseBio Pharmaceuticals
 PHAT;;Phathom Pharmaceuticals
 PHCF;;PUHUI WEALTH INVESTMENT MANAGEMENT CO.
 PHIO;;Phio Pharmaceuticals Corp.
-PHIOW;;Phio Pharmaceuticals Corp.
 PHO;;Invesco Water Resources ETF
 PHUN;;Phunware
-PHUNW;;Phunware
 PI;;Impinj
 PICO;;PICO Holdings Inc.
 PID;;Invesco International Dividend Achievers ETF
@@ -2602,9 +2243,7 @@ PSMT;;PriceSmart
 PSNL;;Personalis
 PSTI;;Pluristem Therapeutics
 PSTV;;PLUS THERAPEUTICS
-PSTVZ;;PLUS THERAPEUTICS
 PT;;Pintec Technology Holdings Limited
-PTACU;;PropTech Acquisition Corporation
 PTC;;PTC Inc.
 PTCT;;PTC Therapeutics
 PTE;;PolarityTE
@@ -2768,8 +2407,6 @@ ROIC;;Retail Opportunity Investments Corp.
 ROKU;;Roku
 ROLL;;RBC Bearings Incorporated
 ROSE;;Rosehill Resources Inc.
-ROSEU;;Rosehill Resources Inc.
-ROSEW;;Rosehill Resources Inc.
 ROST;;Ross Stores
 RP;;RealPage
 RPAY;;Repay Holdings Corporation
@@ -2803,14 +2440,11 @@ SAIA;;Saia
 SAL;;Salisbury Bancorp
 SALM;;Salem Media Group
 SAMA;;Schultze Special Purpose Acquisition Corp.
-SAMAU;;Schultze Special Purpose Acquisition Corp.
-SAMAW;;Schultze Special Purpose Acquisition Corp.
 SAMG;;Silvercrest Asset Management Group Inc.
 SANM;;Sanmina Corporation
 SANW;;S&W Seed Company
 SAQN;;Software Acquisition Group Inc.
 SAQNU;;Software Acquisition Group Inc.
-SAQNW;;Software Acquisition Group Inc.
 SASR;;Sandy Spring Bancorp
 SATS;;EchoStar Corporation
 SAUC;;Diversified Restaurant Holdings
@@ -2871,7 +2505,6 @@ SGC;;Superior Group of Companies
 SGEN;;Seattle Genetics
 SGH;;SMART Global Holdings
 SGLB;;Sigma Labs
-SGLBW;;Sigma Labs
 SGMA;;SigmaTron International
 SGMO;;Sangamo Therapeutics
 SGMS;;Scientific Games Corp
@@ -2881,8 +2514,6 @@ SGRY;;Surgery Partners
 SHBI;;Shore Bancshares Inc
 SHEN;;Shenandoah Telecommunications Co
 SHIP;;Seanergy Maritime Holdings Corp
-SHIPW;;Seanergy Maritime Holdings Corp
-SHIPZ;;Seanergy Maritime Holdings Corp
 SHLO;;Shiloh Industries
 SHOO;;Steven Madden
 SHSP;;SharpSpring
@@ -2933,8 +2564,6 @@ SMED;;Sharps Compliance Corp.
 SMH;;VanEck Vectors Semiconductor ETF
 SMIT;;Schmitt Industries
 SMMC;;South Mountain Merger Corp.
-SMMCU;;South Mountain Merger Corp.
-SMMCW;;South Mountain Merger Corp.
 SMMF;;Summit Financial Group
 SMMT;;Summit Therapeutics plc
 SMPL;;The Simply Good Foods Company
@@ -2952,10 +2581,8 @@ SNDX;;Syndax Pharmaceuticals
 SNES;;SenesTech
 SNFCA;;Security National Financial Corporation
 SNGX;;Soligenix
-SNGXW;;Soligenix
 SNLN;;Highland/iBoxx Senior Loan ETF
 SNOA;;Sonoma Pharmaceuticals
-SNOAW;;Sonoma Pharmaceuticals
 SNPS;;Synopsys
 SNSR;;Global X Internet of Things ETF
 SNSS;;Sunesis Pharmaceuticals
@@ -2971,7 +2598,6 @@ SOLOW;;Electrameccanica Vehicles Corp. Ltd.
 SOLY;;Soliton
 SONA;;Southern National Bancorp of Virginia
 SONG;;Akazoo S.A.
-SONGW;;Akazoo S.A.
 SONM;;Sonim Technologies
 SONO;;Sonos
 SORL;;SORL Auto Parts
@@ -3001,8 +2627,6 @@ SQBG;;Sequential Brands Group
 SQLV;;Legg Mason Small-Cap Quality Value ETF
 SQQQ;;ProShares UltraPro Short QQQ
 SRAC;;Stable Road Acquisition Corp.
-SRACU;;Stable Road Acquisition Corp.
-SRACW;;Stable Road Acquisition Corp.
 SRAX;;SRAX
 SRCE;;1st Source Corporation
 SRCL;;Stericycle
@@ -3014,7 +2638,6 @@ SRPT;;Sarepta Therapeutics
 SRRA;;Sierra Oncology
 SRRK;;Scholar Rock Holding Corporation
 SRTS;;Sensus Healthcare
-SRTSW;;Sensus Healthcare
 SSB;;South State Corporation
 SSBI;;Summit State Bank
 SSKN;;Strata Skin Sciences
@@ -3022,8 +2645,6 @@ SSNC;;SS&C Technologies Holdings
 SSNT;;SilverSun Technologies
 SSP;;E.W. Scripps Company (The)
 SSPK;;Silver Spike Acquisition Corp.
-SSPKU;;Silver Spike Acquisition Corp.
-SSPKW;;Silver Spike Acquisition Corp.
 SSRM;;SSR Mining Inc.
 SSSS;;Sutter Rock Capital Corp.
 SSTI;;ShotSpotter
@@ -3084,7 +2705,6 @@ SYPR;;Sypris Solutions
 SYRS;;Syros Pharmaceuticals
 TA;;TravelCenters of America Inc. 
 TACO;;Del Taco Restaurants
-TACOW;;Del Taco Restaurants
 TACT;;TransAct Technologies Incorporated
 TAIT;;Taitron Components Incorporated
 TANH;;Tantech Holdings Ltd.
@@ -3100,7 +2720,6 @@ TBBK;;The Bancorp
 TBIO;;Translate Bio
 TBK;;Triumph Bancorp
 TBLT;;ToughBuilt Industries
-TBLTW;;ToughBuilt Industries
 TBNK;;Territorial Bancorp Inc.
 TBPH;;Theravance Biopharma
 TC;;TuanChe Limited
@@ -3121,8 +2740,6 @@ TCRD;;THL Credit
 TCRR;;TCR2 Therapeutics Inc.
 TCX;;Tucows Inc.
 TDAC;;Trident Acquisitions Corp.
-TDACU;;Trident Acquisitions Corp.
-TDACW;;Trident Acquisitions Corp.
 TDIV;;First Trust NASDAQ Technology Dividend Index Fund
 TEAM;;Atlassian Corporation Plc
 TECD;;Tech Data Corporation
@@ -3145,14 +2762,9 @@ TGLS;;Tecnoglass Inc.
 TGTX;;TG Therapeutics
 TH;;Target Hospitality Corp.
 THBR;;Thunder Bridge Acquisition II
-THBRU;;Thunder Bridge Acquisition II
-THBRW;;Thunder Bridge Acquisition II
 THCA;;Tuscan Holdings Corp. II
 THCAU;;Tuscan Holdings Corp. II
-THCAW;;Tuscan Holdings Corp. II
 THCB;;Tuscan Holdings Corp.
-THCBU;;Tuscan Holdings Corp.
-THCBW;;Tuscan Holdings Corp.
 THFF;;First Financial Corporation Indiana
 THMO;;ThermoGenesis Holdings
 THOR;;Synthorx
@@ -3160,8 +2772,6 @@ THRM;;Gentherm Inc
 THTX;;Theratechnologies Inc.
 THWWW;;Target Hospitality Corp.
 TIBR;;Tiberius Acquisition Corporation
-TIBRU;;Tiberius Acquisition Corporation
-TIBRW;;Tiberius Acquisition Corporation
 TIGO;;Millicom International Cellular S.A.
 TIGR;;UP Fintech Holding Limited
 TILE;;Interface
@@ -3169,9 +2779,6 @@ TIPT;;Tiptree Inc.
 TITN;;Titan Machinery Inc.
 TIVO;;TiVo Corporation
 TKKS;;TKK Symphony Acquisition Corporation
-TKKSR;;TKK Symphony Acquisition Corporation
-TKKSU;;TKK Symphony Acquisition Corporation
-TKKSW;;TKK Symphony Acquisition Corporation
 TLC;;Taiwan Liposome Company
 TLF;;Tandy Leather Factory
 TLGT;;Teligent
@@ -3190,9 +2797,6 @@ TOCA;;Tocagen Inc.
 TOPS;;TOP Ships Inc.
 TORC;;resTORbio
 TOTA;;Tottenham Acquisition I Limited
-TOTAR;;Tottenham Acquisition I Limited
-TOTAU;;Tottenham Acquisition I Limited
-TOTAW;;Tottenham Acquisition I Limited
 TOUR;;Tuniu Corporation
 TOWN;;Towne Bank
 TPCO;;Tribune Publishing Company
@@ -3250,7 +2854,6 @@ TW;;Tradeweb Markets Inc.
 TWIN;;Twin Disc
 TWMC;;Trans World Entertainment Corp.
 TWNK;;Hostess Brands
-TWNKW;;Hostess Brands
 TWOU;;2U
 TWST;;Twist Bioscience Corporation
 TXG;;10x Genomics
@@ -3260,8 +2863,6 @@ TXRH;;Texas Roadhouse
 TYHT;;Shineco
 TYME;;Tyme Technologies
 TZAC;;Tenzing Acquisition Corp.
-TZACU;;Tenzing Acquisition Corp.
-TZACW;;Tenzing Acquisition Corp.
 TZOO;;Travelzoo
 UAE;;iShares MSCI UAE ETF
 UAL;;United Airlines Holdings
@@ -3315,7 +2916,6 @@ USLV;;Credit Suisse AG
 USMC;;Principal U.S. Mega-Cap Multi-Factor Index ETF
 USOI;;Credit Suisse AG
 USWS;;U.S. Well Services
-USWSW;;U.S. Well Services
 UTHR;;United Therapeutics Corporation
 UTMD;;Utah Medical Products
 UTSI;;UTStarcom Holdings Corp
@@ -3339,7 +2939,6 @@ VCYT;;Veracyte
 VECO;;Veeco Instruments Inc.
 VEON;;VEON Ltd.
 VERB;;Verb Technology Company
-VERBW;;Verb Technology Company
 VERI;;Veritone
 VERO;;Venus Concept Inc. 
 VERU;;Veru Inc.
@@ -3366,7 +2965,6 @@ VISL;;Vislink Technologies
 VIVE;;Viveve Medical
 VIVO;;Meridian Bioscience Inc.
 VKTX;;Viking Therapeutics
-VKTXW;;Viking Therapeutics
 VLGEA;;Village Super Market
 VLRX;;Valeritas Holdings
 VLY;;Valley National Bancorp
@@ -3409,8 +3007,6 @@ VTGN;;VistaGen Therapeutics
 VTHR;;Vanguard Russell 3000 ETF
 VTIP;;Vanguard Short-Term Inflation-Protected Securities Index Fund
 VTIQ;;VectoIQ Acquisition Corp.
-VTIQU;;VectoIQ Acquisition Corp.
-VTIQW;;VectoIQ Acquisition Corp.
 VTNR;;Vertex Energy
 VTSI;;VirTra
 VTVT;;vTv Therapeutics Inc.
@@ -3470,9 +3066,6 @@ WORX;;SCWorx Corp.
 WPRT;;Westport Fuel Systems Inc
 WRLD;;World Acceptance Corporation
 WRLS;;Pensare Acquisition Corp.
-WRLSR;;Pensare Acquisition Corp.
-WRLSU;;Pensare Acquisition Corp.
-WRLSW;;Pensare Acquisition Corp.
 WRTC;;Wrap Technologies
 WSBC;;WesBanco
 WSBF;;Waterstone Financial
@@ -3498,7 +3091,6 @@ WWR;;Westwater Resources
 WYNN;;Wynn Resorts
 XAIR;;Beyond Air
 XBIO;;Xenetic Biosciences
-XBIOW;;Xenetic Biosciences
 XBIT;;XBiotech Inc.
 XCUR;;Exicure
 XEL;;Xcel Energy Inc.
@@ -3553,7 +3145,6 @@ ZIONL;;Zions Bancorporation N.A.
 ZIONN;;Zions Bancorporation N.A.
 ZIONO;;Zions Bancorporation N.A.
 ZIONP;;Zions Bancorporation N.A.
-ZIONW;;Zions Bancorporation N.A.
 ZIOP;;ZIOPHARM Oncology Inc
 ZIV;;Credit Suisse AG
 ZIXI;;Zix Corporation
@@ -3562,10 +3153,8 @@ ZLAB;;Zai Lab Limited
 ZM;;Zoom Video Communications
 ZN;;Zion Oil 
 ZNGA;;Zynga Inc.
-ZNWAA;;Zion Oil 
 ZS;;Zscaler
 ZSAN;;Zosano Pharma Corporation
-ZTEST;;BATS BZX Exchange
 ZUMZ;;Zumiez Inc.
 ZVO;;Zovio Inc.
 ZYNE;;Zynerba Pharmaceuticals

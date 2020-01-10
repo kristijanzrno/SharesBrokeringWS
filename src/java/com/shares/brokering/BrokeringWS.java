@@ -13,6 +13,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.ejb.Stateless;
 import Data.*;
+import docwebservices.CurrencyConversionWSService;
+import javax.xml.ws.WebServiceRef;
 /**
  *
  * @author kristijanzrno
@@ -21,15 +23,19 @@ import Data.*;
 @Stateless()
 public class BrokeringWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-        
-    }
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
+    private CurrencyConversionWSService service;
     
+    @WebMethod(operationName = "test")
+    public String test(){
+        List<Stock> stocks = XMLUtils.unmarshallList(new File("stocks.xml")).getStocks();
+        for(Stock stock : stocks){
+            if(stock.getPrice().getValue() == 0.0)
+                System.out.println(stock.getCompanySymbol());
+        }
+        return "";
+    }
+
     @WebMethod(operationName = "getStock")
     public Stock getStock(String stockSymbol, String currency){
         Stock stock = new Stock();
@@ -44,7 +50,15 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "getAllStocks")
     public List<Stock> getAllStocks(String currency){
-        return XMLUtils.unmarshallList(new File("stocks.xml")).getStocks();
+        List<Stock> stocks = XMLUtils.unmarshallList(new File("stocks.xml")).getStocks();
+        if(!currency.equals("USD")){
+            double conversionRate = getConversionRate("USD", currency);
+            for(Stock stock : stocks){
+                stock.getPrice().setCurrency(currency);
+                stock.getPrice().setValue(stock.getPrice().getValue()*conversionRate);
+            }
+        }
+        return stocks;
     }
     
     @WebMethod(operationName = "buyStock")
@@ -56,4 +70,14 @@ public class BrokeringWS {
     public boolean sellStock(String username, String companySymbol, double value){
         return false;
     }
+
+    private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        docwebservices.CurrencyConversionWS port = service.getCurrencyConversionWSPort();
+        return port.getConversionRate(arg0, arg1);
+    }
+
+
+    
 }
