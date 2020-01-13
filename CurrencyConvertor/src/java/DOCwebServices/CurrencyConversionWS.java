@@ -8,6 +8,8 @@ package DOCwebServices;
 import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebService;
+import saved.rates.Rate;
+import saved.rates.Rates;
 
 /**
  *
@@ -69,24 +71,28 @@ public class CurrencyConversionWS {
         VEB ("Venezuelan Bolivar", 0.145633),
         ZAR ("South African Rand", 0.0893935);
 
-        private final double rateInGBP;
+        private double rateInUSD;
         private final String curName;
-        ExRate(String curName,double rateInGBP) {
-            this.rateInGBP = rateInGBP;
+        ExRate(String curName, double rateInUSD) {
+            this.rateInUSD = rateInUSD;
             this.curName = curName;
         }
-        double rateInGBP()   { return rateInGBP; }
+        double rateInUSD()   { return rateInUSD; }
+        void setRateInUSD(double value){
+            this.rateInUSD = value;
+        }
         String curName()   { return curName; }
     }
 
     public double GetConversionRate(String cur1, String cur2) {
         try {
-            double rate1 = ExRate.valueOf(cur1).rateInGBP;
-            double rate2 = ExRate.valueOf(cur2).rateInGBP;
+            double rate1 = ExRate.valueOf(cur1).rateInUSD;
+            double rate2 = ExRate.valueOf(cur2).rateInUSD;
             return rate1/rate2;
         }
         catch (IllegalArgumentException iae) {
             return -1;
+            
         }
     }
 
@@ -96,5 +102,20 @@ public class CurrencyConversionWS {
             codes.add(exr.name() + " - " + exr.curName);
         }
         return codes;
+    }
+    
+    public boolean updateRates(){
+        CurrencyRatesClient client = new CurrencyRatesClient();
+        Rates rates = (Rates) XMLUtils.unmarshallList(null, client.getRates(), "saved.rates");
+        for(ExRate exr : ExRate.values()){
+            for(Rate rate : rates.getRate()){
+                if(exr.name().equals(rate.getCurrency())){
+                    exr.setRateInUSD(rate.getValue());
+                    System.out.println(exr.name() + " = " + rate.getValue());
+                    break;
+                }
+            }
+        }
+        return true;
     }
 }

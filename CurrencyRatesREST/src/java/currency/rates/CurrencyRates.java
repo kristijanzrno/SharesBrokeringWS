@@ -14,14 +14,13 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.JAXBIntrospector;
 
 /**
  * REST Web Service
  *
  * @author kristijanzrno
  */
-@Path("generic")
+@Path("currencyrates")
 public class CurrencyRates {
 
     @Context
@@ -30,6 +29,7 @@ public class CurrencyRates {
     /**
      * Creates a new instance of CurrencyRates
      */
+    
     public CurrencyRates() {
         Rates rates = new Rates();
     }
@@ -42,7 +42,7 @@ public class CurrencyRates {
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public String getXml() {
-         return XMLUtils.readToString(new File("rates.xml"));
+        return XMLUtils.readToString(new File("rates.xml"));
     }
 
     /**

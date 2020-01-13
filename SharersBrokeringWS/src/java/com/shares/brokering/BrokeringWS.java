@@ -52,7 +52,7 @@ public class BrokeringWS {
     public List<Stock> getAllStocks(String currency){
         List<Stock> stocks = XMLUtils.unmarshallList(new File("stocks.xml")).getStocks();
         if(!currency.equals("USD")){
-            double conversionRate = getConversionRate("USD", currency);
+            double conversionRate = getConversionRate(currency, "USD");
             for(Stock stock : stocks){
                 stock.getPrice().setCurrency(currency);
                 stock.getPrice().setValue(stock.getPrice().getValue()*conversionRate);

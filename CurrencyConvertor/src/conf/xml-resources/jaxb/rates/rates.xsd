@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xsd:schema version="1.0"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="com.shares.brokering"
+           xmlns:tns="com.shares.brokering"
+           elementFormDefault="qualified">
+
+    <xsd:complexType name="rate">
+        <xsd:sequence>
+            <xsd:element name="currency" type="xsd:string"/>
+            <xsd:element name="value" type="xsd:double"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="rates">
+        <xsd:complexType>
+            <xsd:sequence >
+                <xsd:element name="rate" type="tns:rate" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

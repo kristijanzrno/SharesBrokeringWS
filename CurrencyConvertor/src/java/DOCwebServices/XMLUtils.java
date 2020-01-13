@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package currency.rates;
+package DOCwebServices;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.bind.JAXBElement;
+
 
 /**
  *
@@ -33,11 +29,14 @@ public class XMLUtils {
         }
     }
 
-    public static Object unmarshallList(File file, String context) {
+    public static Object unmarshallList(File file, String data, String context) {
         try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(context);
             javax.xml.bind.Unmarshaller unmarshaller = jaxbCtx.createUnmarshaller();
-            return unmarshaller.unmarshal(file); //NOI18N
+            if(file != null)
+                return unmarshaller.unmarshal(file); //NOI18N
+            else 
+                return unmarshaller.unmarshal(new StringReader(data));
         } catch (javax.xml.bind.JAXBException ex) {
             java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
         }
@@ -52,7 +51,7 @@ public class XMLUtils {
             br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
-                sb.append(line);
+                sb.append(line+"\n");
             }
             result = sb.toString();
         } catch (Exception e) {

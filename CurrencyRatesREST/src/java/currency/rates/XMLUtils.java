@@ -7,13 +7,8 @@ package currency.rates;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.bind.JAXBElement;
+
 
 /**
  *
@@ -52,7 +47,7 @@ public class XMLUtils {
             br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
-                sb.append(line);
+                sb.append(line+"\n");
             }
             result = sb.toString();
         } catch (Exception e) {
