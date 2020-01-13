@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/StockExchangeRetainer/Shares.xsd" uri="src/conf/xml-resources/jaxb/shares/Shares.xsd"/>
     <system systemId="file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/StockExchangeRetainer/Prices.xsd" uri="src/conf/xml-resources/jaxb/prices/Prices.xsd"/>
+    <system systemId="file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/StockExchangeRetainer/Shares.xsd" uri="src/conf/xml-resources/jaxb/stocks/Shares.xsd"/>
 </catalog>

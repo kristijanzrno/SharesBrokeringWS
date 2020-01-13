@@ -7,6 +7,9 @@ package stock.exchange;
 
 import java.io.File;
 import java.util.ArrayList;
+import org.json.JSONException;
+import org.json.JSONObject;
+import stock.exchange.prices.*;
 
 /**
  *
@@ -14,15 +17,24 @@ import java.util.ArrayList;
  */
 public class StockPricesClient {
     
+    private static final String API_URL = "https://cloud.iexapis.com/stable/stock/market/";
+    private static final String API_KEY = "pk_14d94e72ad454684b61e666ba5b6d8f2";
+    
     public StockPricesClient(){
         
     }
     
+        //Run only on first run
+        public void initialisePrices(){
+            
+        }
+    
         public void updatePrices(){
-        Data.StocksList stocksList = XMLUtils.unmarshallList(new File("stocks.xml"));
+         StocksList stocksList = (StocksList) XMLUtils.unmarshallList(new File("prices.xml"), "stock.exchange.prices");
         // API limits is 100 stocks per call, but there are 3000+ prices to be fetched
         // To solve this, multiple api calls will be executed
-        ArrayList<String> apiCalls = new ArrayList<String>();
+        
+        ArrayList<String> apiCalls = new ArrayList<>();
         String symbols = "";
         int counter = 0;
         for(int i = 0; i<stocksList.getStocks().size(); i++){
@@ -78,7 +90,7 @@ public class StockPricesClient {
                 }
                 
             }
-            XMLUtils.marshallList(stocksList, new File("stocks.xml"));
+            XMLUtils.marshallList(stocksList, new File("prices.xml"));
         }});
         t.run();
         

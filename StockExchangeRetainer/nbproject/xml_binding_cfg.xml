@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='StockExchangeRetainer' version='1.0'>
-	<schema type='-xmlschema' package='stock.exchange.prices' name='prices'>
+	<schema type='-xmlschema' package='stock.exchange.prices' name='stocks'>
 		<xjc-options>
 		</xjc-options>
 		<schema-sources>
-			<schema-source location='src/conf/xml-resources/jaxb/prices/Prices.xsd' origLocation='Prices.xsd'/>
+			<schema-source location='src/conf/xml-resources/jaxb/stocks/Shares.xsd' origLocation='Shares.xsd'/>
 		</schema-sources>
 		<bindings>
 		</bindings>

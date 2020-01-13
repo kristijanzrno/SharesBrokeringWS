@@ -21,9 +21,8 @@ import org.json.*;
  * @author kristijanzrno
  */
 public class StockInitialiser {
+ 
     
-    private static final String API_URL = "https://cloud.iexapis.com/stable/stock/market/";
-    private static final String API_KEY = "pk_14d94e72ad454684b61e666ba5b6d8f2";
 
     public StockInitialiser() {
 
@@ -65,7 +64,7 @@ public class StockInitialiser {
         XMLUtils.marshallList(stocks, new File("stocks.xml"));
     }
     
-   
+   /*
     public void updatePrices(){
         Data.StocksList stocksList = XMLUtils.unmarshallList(new File("stocks.xml"));
         // API limits is 100 stocks per call, but there are 3000+ prices to be fetched
@@ -130,6 +129,6 @@ public class StockInitialiser {
         }});
         t.run();
         
-    }
+    }*/
     
 }

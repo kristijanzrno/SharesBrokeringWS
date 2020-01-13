@@ -40,6 +40,15 @@ public class ExchangeRatesResource {
         return "";
         
     }
+    
+    
+    @Path("updatePrices")
+    @GET
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML)
+    public String updatePrices(){
+        return "";
+    }
 
     @Path("/getprices")
     @GET
