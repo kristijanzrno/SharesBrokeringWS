@@ -3,70 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.shares.brokering;
+package stock.exchange;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.json.*;
 
 /**
  *
  * @author kristijanzrno
  */
-public class StockInitialiser {
+public class StockPricesClient {
     
-    private static final String API_URL = "https://cloud.iexapis.com/stable/stock/market/";
-    private static final String API_KEY = "pk_14d94e72ad454684b61e666ba5b6d8f2";
-
-    public StockInitialiser() {
-
-    }
-
-    public void initialise() {
-        File f = new File("stocks.xml");
-        if (!f.exists()) {
-            try {
-                f.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        URL fileURL = this.getClass().getClassLoader().getResource("stocks.txt");
-        File stocksFile = new File("");
-        try {
-            stocksFile = new File(fileURL.toURI());
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(WSListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Data.StocksList stocks = new Data.StocksList();
-        try (BufferedReader br = new BufferedReader(new FileReader(stocksFile))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                Data.Stock stock = new Data.Stock();
-                stock.setCompanySymbol(line.split(";;")[0]);
-                stock.setCompanyName(line.split(";;")[1]);
-                stock.setNoOfAvailableShares(50000);
-                Data.Price price = new Data.Price();
-                price.setCurrency("USD");
-                price.setValue(0.0);
-                stock.setPrice(price);
-                stocks.getStocks().add(stock);
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(WSListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        XMLUtils.marshallList(stocks, new File("stocks.xml"));
+    public StockPricesClient(){
+        
     }
     
-   
-    public void updatePrices(){
+        public void updatePrices(){
         Data.StocksList stocksList = XMLUtils.unmarshallList(new File("stocks.xml"));
         // API limits is 100 stocks per call, but there are 3000+ prices to be fetched
         // To solve this, multiple api calls will be executed
