@@ -49,7 +49,7 @@ public class Rates {
     }
     
     private boolean saveRates(saved.rates.Rates rates){
-        XMLUtils.marshallList(rates, new File("rates.xml"));
+        XMLUtils.marshallObject(rates, new File("rates.xml"));
         return false;
     }
 

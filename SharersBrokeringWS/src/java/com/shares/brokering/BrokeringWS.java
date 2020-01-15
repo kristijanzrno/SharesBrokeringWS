@@ -29,7 +29,7 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "test")
     public StocksList test(){
-        StocksList stocks = (StocksList) XMLUtils.unmarshallList(new File("stocks.xml"), "Data");
+        StocksList stocks = (StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data");
         StockExchangeRetainerClient client = new StockExchangeRetainerClient();
         stocks = client.updatePrices(stocks);
         return stocks;
@@ -50,7 +50,7 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "getAllStocks")
     public List<Stock> getAllStocks(String currency){
-        List<Stock> stocks = ((StocksList) XMLUtils.unmarshallList(new File("stocks.xml"), "Data")).getStocks();
+        List<Stock> stocks = ((StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data")).getStocks();
         if(!currency.equals("USD")){
             double conversionRate = getConversionRate(currency, "USD");
             for(Stock stock : stocks){

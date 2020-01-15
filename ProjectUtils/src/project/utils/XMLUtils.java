@@ -8,6 +8,7 @@ package project.utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.StringReader;
 
 
 /**
@@ -16,7 +17,7 @@ import java.io.FileReader;
  */
 public class XMLUtils {
 
-    public static void marshallList(Object marshallObject, File file) {
+    public static void marshallObject(Object marshallObject, File file) {
         try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(marshallObject.getClass().getPackage().getName());
             javax.xml.bind.Marshaller marshaller = jaxbCtx.createMarshaller();
@@ -28,11 +29,22 @@ public class XMLUtils {
         }
     }
 
-    public static Object unmarshallList(File file, String context) {
+    public static Object unmarshallObject(File file, String context) {
         try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(context);
             javax.xml.bind.Unmarshaller unmarshaller = jaxbCtx.createUnmarshaller();
             return unmarshaller.unmarshal(file); //NOI18N
+        } catch (javax.xml.bind.JAXBException ex) {
+            java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
+        }
+        return null;
+    }
+    
+    public static Object unmarshallObjectFromString(String data, String context){
+         try {
+            javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(context);
+            javax.xml.bind.Unmarshaller unmarshaller = jaxbCtx.createUnmarshaller();
+            return unmarshaller.unmarshal(new StringReader(data));
         } catch (javax.xml.bind.JAXBException ex) {
             java.util.logging.Logger.getLogger("global").log(java.util.logging.Level.SEVERE, null, ex); //NOI18N
         }

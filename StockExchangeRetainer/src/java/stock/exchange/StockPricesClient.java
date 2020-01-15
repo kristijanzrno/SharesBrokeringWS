@@ -32,7 +32,7 @@ public class StockPricesClient {
         }
     
         public void updatePrices(){
-         StocksList stocksList = (StocksList) XMLUtils.unmarshallList(new File("prices.xml"), "stock.exchange.prices");
+         StocksList stocksList = (StocksList) XMLUtils.unmarshallObject(new File("prices.xml"), "stock.exchange.prices");
         // API limits is 100 stocks per call, but there are 3000+ prices to be fetched
         // To solve this, multiple api calls will be executed
         
@@ -92,7 +92,7 @@ public class StockPricesClient {
                 }
                 
             }
-            XMLUtils.marshallList(stocksList, new File("prices.xml"));
+            XMLUtils.marshallObject(stocksList, new File("prices.xml"));
         }});
         t.run();
         

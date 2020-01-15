@@ -62,7 +62,7 @@ public class StockInitialiser {
         } catch (Exception ex) {
             Logger.getLogger(WSListener.class.getName()).log(Level.SEVERE, null, ex);
         }
-        XMLUtils.marshallList(stocks, new File("stocks.xml"));
+        XMLUtils.marshallObject(stocks, new File("stocks.xml"));
     }
     
    /*

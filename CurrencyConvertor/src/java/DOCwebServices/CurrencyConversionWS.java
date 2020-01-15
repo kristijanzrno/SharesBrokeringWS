@@ -107,7 +107,7 @@ public class CurrencyConversionWS {
     
     public boolean updateRates(){
         CurrencyRatesClient client = new CurrencyRatesClient();
-        Rates rates = (Rates) XMLUtils.unmarshallList(null, client.getRates(), "saved.rates");
+        Rates rates = (Rates) XMLUtils.unmarshallObjectFromString(client.getRates(), "saved.rates");
         for(ExRate exr : ExRate.values()){
             for(Rate rate : rates.getRate()){
                 if(exr.name().equals(rate.getCurrency())){
