@@ -15,6 +15,7 @@ import javax.ejb.Stateless;
 import Data.*;
 import docwebservices.CurrencyConversionWSService;
 import javax.xml.ws.WebServiceRef;
+import project.utils.XMLUtils;
 /**
  *
  * @author kristijanzrno
@@ -27,16 +28,12 @@ public class BrokeringWS {
     private CurrencyConversionWSService service;
     
     @WebMethod(operationName = "test")
-    public String test(){
-        StocksList stocks = XMLUtils.unmarshallList(new File("stocks.xml"));
+    public StocksList test(){
+        StocksList stocks = (StocksList) XMLUtils.unmarshallList(new File("stocks.xml"), "Data");
         StockExchangeRetainerClient client = new StockExchangeRetainerClient();
         stocks = client.updatePrices(stocks);
-        //stocks = client.updatePrices(stocks);
-        for(Stock stock : stocks.getStocks()){
-            System.out.println(stock.getCompanySymbol());
-        }
-        return "";
-        //return client.updatePrices(stocks);
+        return stocks;
+        
     }
 
     @WebMethod(operationName = "getStock")
@@ -53,7 +50,7 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "getAllStocks")
     public List<Stock> getAllStocks(String currency){
-        List<Stock> stocks = XMLUtils.unmarshallList(new File("stocks.xml")).getStocks();
+        List<Stock> stocks = ((StocksList) XMLUtils.unmarshallList(new File("stocks.xml"), "Data")).getStocks();
         if(!currency.equals("USD")){
             double conversionRate = getConversionRate(currency, "USD");
             for(Stock stock : stocks){

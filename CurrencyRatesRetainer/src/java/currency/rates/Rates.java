@@ -8,6 +8,8 @@ package currency.rates;
 import java.io.File;
 import java.util.Iterator;
 import org.json.JSONObject;
+import project.utils.URLUtils;
+import project.utils.XMLUtils;
 
 /**
  *

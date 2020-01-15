@@ -50,6 +50,8 @@ public class ExchangeRatesResource {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
     public StocksList updatePrices(StocksList stocks){
+        for(Stock stock : stocks.getStocks())
+            stock.getPrice().setValue(1.45);
         System.out.println("UPDATING STOCKS");
         return stocks;
     }

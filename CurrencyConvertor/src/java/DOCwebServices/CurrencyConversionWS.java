@@ -8,6 +8,7 @@ package DOCwebServices;
 import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebService;
+import project.utils.XMLUtils;
 import saved.rates.Rate;
 import saved.rates.Rates;
 
