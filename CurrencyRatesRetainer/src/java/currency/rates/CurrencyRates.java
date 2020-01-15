@@ -49,6 +49,7 @@ public class CurrencyRates {
      * PUT method for updating or creating an instance of CurrencyRates
      * @param content representation for the resource
      */
+    
     @PUT
     @Consumes(MediaType.APPLICATION_XML)
     public void putXml(String content) {

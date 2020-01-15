@@ -5,15 +5,18 @@
  */
 package stock.exchange;
 
-import java.io.File;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import stock.exchange.prices.Stock;
+import stock.exchange.prices.StocksList;
 
 /**
  * REST Web Service
@@ -42,12 +45,22 @@ public class ExchangeRatesResource {
     }
     
     
-    @Path("updatePrices")
-    @GET
+    @Path("/updatePrices")
+    @PUT
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-    public String updatePrices(){
-        return "";
+    public StocksList updatePrices(StocksList stocks){
+        System.out.println("UPDATING STOCKS");
+        return stocks;
+    }
+    
+    
+    @Path("/updatePrice")
+    @PUT
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML)
+    public Stock updatePrice(Stock stock){
+        return stock;
     }
 
     @Path("/getprices")

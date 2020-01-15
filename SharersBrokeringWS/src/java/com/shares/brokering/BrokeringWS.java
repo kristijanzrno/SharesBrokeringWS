@@ -28,12 +28,15 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "test")
     public String test(){
-        List<Stock> stocks = XMLUtils.unmarshallList(new File("stocks.xml")).getStocks();
-        for(Stock stock : stocks){
-            if(stock.getPrice().getValue() == 0.0)
-                System.out.println(stock.getCompanySymbol());
+        StocksList stocks = XMLUtils.unmarshallList(new File("stocks.xml"));
+        StockExchangeRetainerClient client = new StockExchangeRetainerClient();
+        stocks = client.updatePrices(stocks);
+        //stocks = client.updatePrices(stocks);
+        for(Stock stock : stocks.getStocks()){
+            System.out.println(stock.getCompanySymbol());
         }
         return "";
+        //return client.updatePrices(stocks);
     }
 
     @WebMethod(operationName = "getStock")
@@ -70,6 +73,8 @@ public class BrokeringWS {
     public boolean sellStock(String username, String companySymbol, double value){
         return false;
     }
+    
+  
 
     private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
