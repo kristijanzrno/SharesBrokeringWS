@@ -5,6 +5,8 @@
  */
 package stock.exchange;
 
+import java.util.HashMap;
+import javafx.util.Pair;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -17,6 +19,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import stock.exchange.prices.Stock;
 import stock.exchange.prices.StocksList;
+import stock.exchange.values.StockPrice;
 
 /**
  * REST Web Service
@@ -33,50 +36,48 @@ public class ExchangeRatesResource {
      * Creates a new instance of ExchangeRatesResource
      */
     public ExchangeRatesResource() {
-        
     }
-    
-     
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public String getXml() {
-        return "";
-        
-    }
-    
-    
+
     @Path("/updatePrices")
     @PUT
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-    public StocksList updatePrices(StocksList stocks){
-        for(Stock stock : stocks.getStocks())
-            stock.getPrice().setValue(1.45);
-        System.out.println("UPDATING STOCKS");
+    public StocksList updatePrices(StocksList stocks) {
+        StockPricesClient client = new StockPricesClient();
+        HashMap<String, Double> symbolValuePairs = client.getSymbolValuePairs();
+        //commented out due to api quota
+        //client.updatePrices();
+        for (Stock stock : stocks.getStocks()) {
+            System.out.println(stock.getCompanySymbol());
+            stock.getPrice().setValue(symbolValuePairs.getOrDefault(stock.getCompanySymbol(), stock.getPrice().getValue()));
+        }
         return stocks;
     }
-    
-    
+
     @Path("/updatePrice")
     @PUT
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-    public Stock updatePrice(Stock stock){
+    public Stock updatePrice(Stock stock) {
+        StockPricesClient client = new StockPricesClient();
+        HashMap<String, Double> symbolValuePairs = client.getSymbolValuePairs();
+        //commented out due to api quota
+        //client.updatePrices();
+        stock.getPrice().setValue(symbolValuePairs.getOrDefault(stock.getCompanySymbol(), stock.getPrice().getValue()));
         return stock;
     }
 
     @Path("/getprices")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public String getPrices(){
-        return "prices";
+    public String getPrices() {
+        return "";
     }
-    
+
     @Path("/getprice/{symbol}")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    @Consumes(MediaType.APPLICATION_XML)
-    public String getPrice(@PathParam("symbol") String symbol){
+    public String getPrice(@PathParam("symbol") String symbol) {
         return symbol;
     }
 }

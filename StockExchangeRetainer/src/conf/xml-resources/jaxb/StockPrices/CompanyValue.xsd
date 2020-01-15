@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="com.shares.brokering"
+    xmlns:tns="com.shares.brokering"
+    elementFormDefault="qualified">
+
+    
+    <xsd:complexType name="price">
+        <xsd:sequence>
+            <xsd:element name="currency" type="xsd:string"/>
+            <xsd:element name="value" type="xsd:double"/>
+            <xsd:element name="last_updated" type="xsd:date"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="stock_price">
+        <xsd:sequence>
+            <xsd:element name="company_symbol" type="xsd:string"/>
+            <xsd:element name="price" type="tns:price"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="stock_prices_list">
+        <xsd:complexType>
+            <xsd:sequence >
+                <xsd:element name="stock_price" type="tns:stock_price" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
