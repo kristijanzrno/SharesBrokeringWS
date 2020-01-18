@@ -66,7 +66,6 @@ public class AccountUtils {
     }
     
     public List<Account> getAccounts(){
-        System.out.println("getting accounts");
         return accounts.getAccounts();
     }
     
