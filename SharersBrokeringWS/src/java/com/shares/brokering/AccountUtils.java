@@ -13,6 +13,7 @@ import sharers.brokering.useraccounts.*;
 public class AccountUtils {
     
     AccountList accounts;
+    
     public AccountUtils(){
         //Initialise accounts file if not present
         File f = new File("accounts.xml");
@@ -65,6 +66,7 @@ public class AccountUtils {
     }
     
     public List<Account> getAccounts(){
+        System.out.println("getting accounts");
         return accounts.getAccounts();
     }
     

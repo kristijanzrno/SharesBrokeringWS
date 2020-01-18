@@ -12,23 +12,25 @@ import sharers.brokering.useraccounts.Account;
  * @author kristijanzrno
  */
 public class Auth {
-    
-    public static boolean authenticate(String username, String password){
+
+    public static boolean authenticate(String username, String password) {
         AccountUtils accountUtils = new AccountUtils();
-        for(Account account : accountUtils.getAccounts()){
-            if(account.getAccountName().equals(username) && account.getAccountPassword().equals(password))
+        for (Account account : accountUtils.getAccounts()) {
+            if (account.getAccountName().equals(username) && account.getAccountPassword().equals(password)) {
                 return true;
+            }
         }
         return false;
     }
-    
-     public static boolean authenticateAdmin(String username, String password){
+
+    public static boolean authenticateAdmin(String username, String password) {
         AccountUtils accountUtils = new AccountUtils();
-        for(Account account : accountUtils.getAccounts()){
-            if(account.getAccountName().equals(username) && account.getAccountPassword().equals(password) && account.getAccountLevel() > 2)
+        for (Account account : accountUtils.getAccounts()) {
+            if (account.getAccountName().equals(username) && account.getAccountPassword().equals(password) && account.getAccountLevel() > 2) {
                 return true;
+            }
         }
         return false;
     }
-    
+
 }

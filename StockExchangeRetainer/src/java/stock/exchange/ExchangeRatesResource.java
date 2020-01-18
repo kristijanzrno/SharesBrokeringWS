@@ -32,10 +32,11 @@ public class ExchangeRatesResource {
     @Context
     private UriInfo context;
 
-    /**
-     * Creates a new instance of ExchangeRatesResource
-     */
+    StockPricesClient externalStockPrices;
+
     public ExchangeRatesResource() {
+        externalStockPrices = new StockPricesClient();
+
     }
 
     @Path("/updatePrices")
@@ -43,14 +44,13 @@ public class ExchangeRatesResource {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
     public StocksList updatePrices(StocksList stocks) {
-        StockPricesClient client = new StockPricesClient();
-        HashMap<String, Double> symbolValuePairs = client.getSymbolValuePairs();
+        HashMap<String, Double> symbolValuePairs = externalStockPrices.getSymbolValuePairs();
         //commented out due to api quota
-        //client.updatePrices();
+        //externalStockPrices.updatePrices();
         for (Stock stock : stocks.getStocks()) {
-            System.out.println(stock.getCompanySymbol());
             stock.getPrice().setValue(symbolValuePairs.getOrDefault(stock.getCompanySymbol(), stock.getPrice().getValue()));
         }
+
         return stocks;
     }
 
@@ -59,10 +59,9 @@ public class ExchangeRatesResource {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
     public Stock updatePrice(Stock stock) {
-        StockPricesClient client = new StockPricesClient();
-        HashMap<String, Double> symbolValuePairs = client.getSymbolValuePairs();
+        HashMap<String, Double> symbolValuePairs = externalStockPrices.getSymbolValuePairs();
         //commented out due to api quota
-        //client.updatePrices();
+        //externalStockPrices.updatePrices();
         stock.getPrice().setValue(symbolValuePairs.getOrDefault(stock.getCompanySymbol(), stock.getPrice().getValue()));
         return stock;
     }
@@ -72,6 +71,7 @@ public class ExchangeRatesResource {
     @Produces(MediaType.APPLICATION_XML)
     public String getPrices() {
         return "";
+
     }
 
     @Path("/getprice/{symbol}")
