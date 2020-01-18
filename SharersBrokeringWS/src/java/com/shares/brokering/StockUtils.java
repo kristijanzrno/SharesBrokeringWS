@@ -6,10 +6,8 @@
 package com.shares.brokering;
 
 import Data.*;
-import docwebservices.CurrencyConversionWSService;
 import java.io.File;
 import java.util.List;
-import javax.xml.ws.WebServiceRef;
 import project.utils.XMLUtils;
 
 /**
@@ -21,19 +19,39 @@ public class StockUtils {
     StocksList stocksList;
     StockExchangeRetainerClient stockExchangeClient;
 
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
-    private CurrencyConversionWSService currencyConversionService;
 
     public StockUtils() {
         stocksList = (StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data");
         stockExchangeClient = new StockExchangeRetainerClient();
     }
 
-    public boolean buyStock(String username, String companySymbol, double value) {
+    public boolean buyStock(String username, String companySymbol, int value) {
+        for (Stock stock : stocksList.getStocks()) {
+            if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
+                if (stock.getNoOfAvailableShares() >= value) {
+                    //add stock to the user
+                    if (new AccountUtils().addShare(username, stock.getCompanySymbol(), stock.getCompanyName(), value)) {
+                        stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() - value);
+                        saveStocks();
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 
-    public boolean sellStock(String username, String companySymbol, double value) {
+    public boolean sellStock(String username, String companySymbol, int value) {
+        for (Stock stock : stocksList.getStocks()) {
+            if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
+                    //remove stock from the user
+                    if (new AccountUtils().removeShare(username, stock.getCompanySymbol(), value)) {
+                        stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() + value);
+                        saveStocks();
+                        return true;
+                    }
+                }
+        }
         return false;
     }
 
@@ -41,7 +59,7 @@ public class StockUtils {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
                 if (!currency.equals("USD") && !currency.isEmpty()) {
-                    double conversionRate = getConversionRate(currency, "USD");
+                    double conversionRate = getConversionRate("USD", currency.toUpperCase());
                     stock.getPrice().setCurrency(currency);
                     stock.getPrice().setValue(stock.getPrice().getValue() * conversionRate);
                 }
@@ -105,8 +123,9 @@ public class StockUtils {
         XMLUtils.marshallObject(stocksList, new File("stocks.xml"));
     }
 
-    private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
-        docwebservices.CurrencyConversionWS port = currencyConversionService.getCurrencyConversionWSPort();
+    private static double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
+        docwebservices.CurrencyConversionWSService service = new docwebservices.CurrencyConversionWSService();
+        docwebservices.CurrencyConversionWS port = service.getCurrencyConversionWSPort();
         return port.getConversionRate(arg0, arg1);
     }
 

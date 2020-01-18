@@ -16,7 +16,7 @@ import javax.ws.rs.client.WebTarget;
 public class CurrencyRatesClient {
     private WebTarget webTarget;
     private Client client;
-    private static final String SERVICE_URL = "http://localhost:8080/CurrencyRatesREST/webresources";
+    private static final String SERVICE_URL = "http://localhost:8080/CurrencyRatesRetainer/webresources";
     
     public CurrencyRatesClient(){
         client = ClientBuilder.newClient();

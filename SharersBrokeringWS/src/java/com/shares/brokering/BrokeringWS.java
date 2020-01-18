@@ -43,7 +43,7 @@ public class BrokeringWS {
     }
 
     @WebMethod(operationName = "buyStock")
-    public boolean buyStock(String authUsername, String authPassword, String companySymbol, double value) {
+    public boolean buyStock(String authUsername, String authPassword, String companySymbol, int value) {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
@@ -51,7 +51,7 @@ public class BrokeringWS {
     }
 
     @WebMethod(operationName = "sellStock")
-    public boolean sellStock(String authUsername, String authPassword, String companySymbol, double value) {
+    public boolean sellStock(String authUsername, String authPassword, String companySymbol, int value) {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }

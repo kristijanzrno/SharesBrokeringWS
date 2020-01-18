@@ -21,7 +21,7 @@ public class WSListener implements ServletContextListener{
     public void contextInitialized(ServletContextEvent sce) {
        StockInitialiser initialiser = new StockInitialiser();
        //Use during server setup only
-       initialiser.initialise();
+       //initialiser.initialise();
 
        
        
