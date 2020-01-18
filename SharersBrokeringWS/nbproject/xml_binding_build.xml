@@ -25,6 +25,20 @@
         <copy todir="${build.generated.sources.dir}/jaxb">
             <fileset dir="build/generated/jaxbCache/jaxbShares"/>
         </copy>
+        <mkdir dir="build/generated/jaxbCache/userAccounts"/>
+        <xjc package="sharers.brokering.useraccounts" destdir="build/generated/jaxbCache/userAccounts" catalog="catalog.xml">
+            <classpath>
+                <pathelement location="${src.dir}"/>
+                <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
+            </classpath>
+            <arg value="-xmlschema"/>
+            <schema file="src/conf/xml-resources/jaxb/userAccounts/Accounts.xsd"/>
+            <depends file="src/conf/xml-resources/jaxb/userAccounts/Accounts.xsd"/>
+            <produces dir="build/generated/jaxbCache/userAccounts"/>
+        </xjc>
+        <copy todir="${build.generated.sources.dir}/jaxb">
+            <fileset dir="build/generated/jaxbCache/userAccounts"/>
+        </copy>
         <!--*** Web project javac macro does not support sourcepath attribute, so do not pass "sourcepath=${src.dir}"-->
     </target>
 </project>

@@ -5,5 +5,5 @@
 // Generated on: 2020.01.18 at 12:34:31 AM GMT 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "com.shares.brokering", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package Data;
+@javax.xml.bind.annotation.XmlSchema(namespace = "com.shares.brokering.accounts", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package sharers.brokering.useraccounts;

@@ -6,28 +6,30 @@
 //
 
 
-package Data;
+package sharers.brokering.useraccounts;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for stock complex type.
+ * <p>Java class for bought_stock complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="stock">
+ * &lt;complexType name="bought_stock">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="company_name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="company_symbol" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="no_of_available_shares" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="price" type="{com.shares.brokering}price"/>
+ *         &lt;element name="no_of_bought_shares" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="date_bought" type="{http://www.w3.org/2001/XMLSchema}date"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,22 +39,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "stock", propOrder = {
+@XmlType(name = "bought_stock", propOrder = {
     "companyName",
     "companySymbol",
-    "noOfAvailableShares",
-    "price"
+    "noOfBoughtShares",
+    "dateBought"
 })
-public class Stock {
+public class BoughtStock {
 
     @XmlElement(name = "company_name", required = true)
     protected String companyName;
     @XmlElement(name = "company_symbol", required = true)
     protected String companySymbol;
-    @XmlElement(name = "no_of_available_shares")
-    protected int noOfAvailableShares;
-    @XmlElement(required = true)
-    protected Price price;
+    @XmlElement(name = "no_of_bought_shares")
+    protected int noOfBoughtShares;
+    @XmlElement(name = "date_bought", required = true)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar dateBought;
 
     /**
      * Gets the value of the companyName property.
@@ -103,43 +106,43 @@ public class Stock {
     }
 
     /**
-     * Gets the value of the noOfAvailableShares property.
+     * Gets the value of the noOfBoughtShares property.
      * 
      */
-    public int getNoOfAvailableShares() {
-        return noOfAvailableShares;
+    public int getNoOfBoughtShares() {
+        return noOfBoughtShares;
     }
 
     /**
-     * Sets the value of the noOfAvailableShares property.
+     * Sets the value of the noOfBoughtShares property.
      * 
      */
-    public void setNoOfAvailableShares(int value) {
-        this.noOfAvailableShares = value;
+    public void setNoOfBoughtShares(int value) {
+        this.noOfBoughtShares = value;
     }
 
     /**
-     * Gets the value of the price property.
+     * Gets the value of the dateBought property.
      * 
      * @return
      *     possible object is
-     *     {@link Price }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public Price getPrice() {
-        return price;
+    public XMLGregorianCalendar getDateBought() {
+        return dateBought;
     }
 
     /**
-     * Sets the value of the price property.
+     * Sets the value of the dateBought property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Price }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setPrice(Price value) {
-        this.price = value;
+    public void setDateBought(XMLGregorianCalendar value) {
+        this.dateBought = value;
     }
 
 }

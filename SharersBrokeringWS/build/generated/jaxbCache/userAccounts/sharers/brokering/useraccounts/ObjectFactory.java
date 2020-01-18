@@ -6,7 +6,7 @@
 //
 
 
-package Data;
+package sharers.brokering.useraccounts;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the Data package. 
+ * generated in the sharers.brokering.useraccounts package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,34 +30,42 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: Data
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: sharers.brokering.useraccounts
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link StocksList }
+     * Create an instance of {@link AccountList }
      * 
      */
-    public StocksList createStocksList() {
-        return new StocksList();
+    public AccountList createAccountList() {
+        return new AccountList();
     }
 
     /**
-     * Create an instance of {@link Stock }
+     * Create an instance of {@link Account }
      * 
      */
-    public Stock createStock() {
-        return new Stock();
+    public Account createAccount() {
+        return new Account();
     }
 
     /**
-     * Create an instance of {@link Price }
+     * Create an instance of {@link BoughtStock }
      * 
      */
-    public Price createPrice() {
-        return new Price();
+    public BoughtStock createBoughtStock() {
+        return new BoughtStock();
+    }
+
+    /**
+     * Create an instance of {@link BoughtStocks }
+     * 
+     */
+    public BoughtStocks createBoughtStocks() {
+        return new BoughtStocks();
     }
 
 }

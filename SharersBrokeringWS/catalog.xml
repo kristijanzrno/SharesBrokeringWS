@@ -5,4 +5,5 @@
     <system systemId="http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService" uri="src/conf/xml-resources/web-service-references/CurrencyConversionWSService/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.xml"/>
     <system systemId="http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService?WSDL" uri="src/conf/xml-resources/web-service-references/CurrencyConversionWSService/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl"/>
     <system systemId="http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService?xsd=1" uri="src/conf/xml-resources/web-service-references/CurrencyConversionWSService/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.xsd_1.xsd"/>
+    <system systemId="file:/Users/kristijanzrno/Documents/SharesBrokeringWS/SharersBrokeringWS/Accounts.xsd" uri="src/conf/xml-resources/jaxb/userAccounts/Accounts.xsd"/>
 </catalog>

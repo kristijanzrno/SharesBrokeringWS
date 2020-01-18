@@ -6,7 +6,7 @@
 //
 
 
-package Data;
+package sharers.brokering.useraccounts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="stocks" type="{com.shares.brokering}stock" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="accounts" type="{com.shares.brokering.accounts}account" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,40 +37,40 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "stocks"
+    "accounts"
 })
-@XmlRootElement(name = "stocks_list")
-public class StocksList {
+@XmlRootElement(name = "account_list")
+public class AccountList {
 
-    protected List<Stock> stocks;
+    protected List<Account> accounts;
 
     /**
-     * Gets the value of the stocks property.
+     * Gets the value of the accounts property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stocks property.
+     * This is why there is not a <CODE>set</CODE> method for the accounts property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStocks().add(newItem);
+     *    getAccounts().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Stock }
+     * {@link Account }
      * 
      * 
      */
-    public List<Stock> getStocks() {
-        if (stocks == null) {
-            stocks = new ArrayList<Stock>();
+    public List<Account> getAccounts() {
+        if (accounts == null) {
+            accounts = new ArrayList<Account>();
         }
-        return this.stocks;
+        return this.accounts;
     }
 
 }

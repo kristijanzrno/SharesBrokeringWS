@@ -6,27 +6,27 @@
 //
 
 
-package Data;
+package sharers.brokering.useraccounts;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for bought_stocks complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
+ * &lt;complexType name="bought_stocks">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="stocks" type="{com.shares.brokering}stock" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="bought_stock" type="{com.shares.brokering.accounts}bought_stock" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,41 +36,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "stocks"
+@XmlType(name = "bought_stocks", propOrder = {
+    "boughtStock"
 })
-@XmlRootElement(name = "stocks_list")
-public class StocksList {
+public class BoughtStocks {
 
-    protected List<Stock> stocks;
+    @XmlElement(name = "bought_stock")
+    protected List<BoughtStock> boughtStock;
 
     /**
-     * Gets the value of the stocks property.
+     * Gets the value of the boughtStock property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the stocks property.
+     * This is why there is not a <CODE>set</CODE> method for the boughtStock property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getStocks().add(newItem);
+     *    getBoughtStock().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Stock }
+     * {@link BoughtStock }
      * 
      * 
      */
-    public List<Stock> getStocks() {
-        if (stocks == null) {
-            stocks = new ArrayList<Stock>();
+    public List<BoughtStock> getBoughtStock() {
+        if (boughtStock == null) {
+            boughtStock = new ArrayList<BoughtStock>();
         }
-        return this.stocks;
+        return this.boughtStock;
     }
 
 }
