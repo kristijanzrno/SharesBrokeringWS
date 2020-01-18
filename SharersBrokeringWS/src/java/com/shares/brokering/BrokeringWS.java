@@ -16,6 +16,7 @@ import Data.*;
 import docwebservices.CurrencyConversionWSService;
 import javax.xml.ws.WebServiceRef;
 import project.utils.XMLUtils;
+
 /**
  *
  * @author kristijanzrno
@@ -26,53 +27,77 @@ public class BrokeringWS {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
     private CurrencyConversionWSService service;
-    
+
     @WebMethod(operationName = "test")
-    public StocksList test(){
+    public StocksList test() {
         StocksList stocks = (StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data");
         StockExchangeRetainerClient client = new StockExchangeRetainerClient();
         stocks = client.updatePrices(stocks);
         return stocks;
-        
+
     }
 
     @WebMethod(operationName = "getStock")
-    public Stock getStock(String stockSymbol, String currency){
-        Stock stock = new Stock();
-        stock.setCompanyName("name");
-        stock.setCompanySymbol(stockSymbol);
-        Price price = new Price();
-        price.setCurrency(currency);
-        price.setValue(234);
-        stock.setPrice(price);
-        return stock;
-    }
-    
-    @WebMethod(operationName = "getAllStocks")
-    public List<Stock> getAllStocks(String currency){
+    public Stock getStock(String stockSymbol, String currency, String authUsername, String authPassword) {
+        if(!Auth.authenticate(authUsername, authPassword))
+            return null;
         List<Stock> stocks = ((StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data")).getStocks();
-        if(!currency.equals("USD")){
+        if (!currency.equals("USD") && !currency.isEmpty()) {
             double conversionRate = getConversionRate(currency, "USD");
-            for(Stock stock : stocks){
+            for (Stock stock : stocks) {
+                if (stock.getCompanySymbol().equals(stockSymbol)) {
+                    stock.getPrice().setCurrency(currency);
+                    stock.getPrice().setValue(stock.getPrice().getValue() * conversionRate);
+                }
+                return stock;
+            }
+        }
+        return null;
+    }
+
+    @WebMethod(operationName = "getAllStocks")
+    public List<Stock> getAllStocks(String currency, String authUsername, String authPassword) {
+        if(!Auth.authenticate(authUsername, authPassword))
+            return null;
+        List<Stock> stocks = ((StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data")).getStocks();
+        if (!currency.equals("USD") && !currency.isEmpty()) {
+            double conversionRate = getConversionRate(currency, "USD");
+            for (Stock stock : stocks) {
                 stock.getPrice().setCurrency(currency);
-                stock.getPrice().setValue(stock.getPrice().getValue()*conversionRate);
+                stock.getPrice().setValue(stock.getPrice().getValue() * conversionRate);
             }
         }
         return stocks;
     }
-    
-    @WebMethod(operationName = "buyStock")
-    public boolean buyStock(String username, String companySymbol, double value){
-        return false;
-    }
-    
-    @WebMethod(operationName = "sellStock")
-    public boolean sellStock(String username, String companySymbol, double value){
-        return false;
-    }
-    
-  
 
+    @WebMethod(operationName = "buyStock")
+    public boolean buyStock(String authUsername, String authPassword, String companySymbol, double value) {
+        if(!Auth.authenticate(authUsername, authPassword))
+            return false;
+        return false;
+    }
+
+    @WebMethod(operationName = "sellStock")
+    public boolean sellStock(String authUsername, String authPassword, String companySymbol, double value) {
+        if(!Auth.authenticate(authUsername, authPassword))
+            return false;
+        return false;
+    }
+    
+    @WebMethod(operationName = "createAccount")
+    public boolean createAccount(String authUsername, String authPassword, String accountUsername, String accountPassword, int accountLevel){
+        if(!Auth.authenticate(authUsername, authPassword))
+            return false;
+        return new AccountUtils().createAccount(accountUsername, accountPassword, accountLevel);
+    }
+    
+    @WebMethod(operationName = "deleteAccount")
+    public boolean deleteAccount(String authUsername, String authPassword, String accountUsername){
+        if(!Auth.authenticateAdmin(authUsername, authPassword))
+            return false;
+        return new AccountUtils().deleteAccount(accountUsername);
+    }
+    
     private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -80,6 +105,4 @@ public class BrokeringWS {
         return port.getConversionRate(arg0, arg1);
     }
 
-
-    
 }

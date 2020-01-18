@@ -23,9 +23,7 @@ public class StockInitialiser {
  
     
 
-    public StockInitialiser() {
-
-    }
+    public StockInitialiser() {}
 
     public void initialise() {
         File f = new File("stocks.xml");
