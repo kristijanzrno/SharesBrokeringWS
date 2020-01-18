@@ -19,7 +19,7 @@ public class WSListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         //Use during server setup ONLY
-        StockPricesClient client = new StockPricesClient();
+        //StockPricesClient client = new StockPricesClient();
         //client.initialisePrices();
         //client.updatePrices();
 

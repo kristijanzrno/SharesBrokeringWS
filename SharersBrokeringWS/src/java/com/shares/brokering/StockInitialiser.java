@@ -51,6 +51,10 @@ public class StockInitialiser {
                 stock.setCompanySymbol(line.split(";;")[0]);
                 stock.setCompanyName(line.split(";;")[1]);
                 stock.setNoOfAvailableShares(50000);
+                Data.Price price = new Data.Price();
+                price.setCurrency("USD");
+                price.setValue(0.0);
+                stock.setPrice(price);
                 stocks.getStocks().add(stock);
             }
         } catch (Exception ex) {

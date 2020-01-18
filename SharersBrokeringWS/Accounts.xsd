@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="com.shares.brokering"
+    xmlns:tns="com.shares.brokering"
+    elementFormDefault="qualified">
+    
+    
+     <xsd:complexType name="bought_stock">
+        <xsd:sequence>
+            <xsd:element name="company_name" type="xsd:string"/>
+            <xsd:element name="company_symbol" type="xsd:string"/>
+            <xsd:element name="no_of_bought_shares" type="xsd:int"/>
+            <xsd:element name="date_bought" type="xsd:date"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="bought_stocks">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="bought_stock" type="tns:bought_stock" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    
+    <xsd:complexType name="account">
+        <xsd:sequence>
+            <xsd:element name="account_name" type="xsd:string"/>
+            <xsd:element name="account_password" type="xsd:string"/>
+            <xsd:element name="account_level" type="xsd:int"/>
+            <xsd:element name="bought_stocks" type="tns:bought_stocks"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="account_list">
+        <xsd:complexType>
+            <xsd:sequence >
+                <xsd:element name="account" type="tns:account" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
