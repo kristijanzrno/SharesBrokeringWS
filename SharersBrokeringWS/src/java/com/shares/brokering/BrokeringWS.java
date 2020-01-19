@@ -13,6 +13,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.WebServiceRef;
 import sharers.brokering.useraccounts.Account;
+import sharers.brokering.useraccounts.*;
 
 /**
  *
@@ -25,11 +26,7 @@ public class BrokeringWS {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
     private CurrencyConversionWSService service;
 
-    AccountUtils accountUtils;
-
-    public BrokeringWS() {
-        accountUtils = new AccountUtils();
-    }
+    public BrokeringWS() {}
 
     @WebMethod(operationName = "getStock")
     public Stock getStock(String authUsername, String authPassword, String companySymbol, String currency) {
@@ -68,7 +65,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-        return accountUtils.createAccount(accountUsername, accountPassword, accountLevel);
+        return new AccountUtils().createAccount(accountUsername, accountPassword, accountLevel);
     }
 
     @WebMethod(operationName = "deleteAccount")
@@ -76,7 +73,7 @@ public class BrokeringWS {
         if (!Auth.authenticateAdmin(authUsername, authPassword)) {
             return false;
         }
-        return accountUtils.deleteAccount(accountUsername);
+        return new AccountUtils().deleteAccount(accountUsername);
     }
 
     @WebMethod(operationName = "getAccounts")
@@ -84,7 +81,15 @@ public class BrokeringWS {
         if (!Auth.authenticateAdmin(authUsername, authPassword)) {
             return null;
         }
-        return accountUtils.getAccounts();
+        return new AccountUtils().getAccounts();
+    }
+    
+    @WebMethod(operationName = "getAllAccountShares")
+    public List<BoughtStock> getAllAccountShares(String authUsername, String authPassword) {
+        if (!Auth.authenticate(authUsername, authPassword)) {
+            return null;
+        }
+        return new AccountUtils().getAllUsernameStocks(authUsername);
     }
 
 }

@@ -31,6 +31,7 @@ public class AccountUtils {
             }
 
         }
+        System.out.println("test");
 
     }
 
@@ -117,11 +118,18 @@ public class AccountUtils {
         return accounts.getAccounts();
     }
 
-    private List<BoughtStock> getAllAccountStocks(Account account) {
+    public List<BoughtStock> getAllAccountStocks(Account account) {
         if (account.getAccountBoughtStocks() == null) {
             return null;
         }
         return account.getAccountBoughtStocks().getBoughtStock();
+    }
+    
+     public List<BoughtStock> getAllUsernameStocks(String account) {
+        if (getAccount(account).getAccountBoughtStocks() == null) {
+            return null;
+        }
+        return getAccount(account).getAccountBoughtStocks().getBoughtStock();
     }
 
     private BoughtStock getAccountStock(Account account, String companySymbol) {
