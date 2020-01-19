@@ -51,6 +51,7 @@ public class StockInitialiser {
                 stock.setNoOfAvailableShares(50000);
                 Data.Price price = new Data.Price();
                 price.setCurrency("USD");
+                price.setLastUpdated(XMLUtils.currentDate());
                 price.setValue(0.0);
                 stock.setPrice(price);
                 stocks.getStocks().add(stock);

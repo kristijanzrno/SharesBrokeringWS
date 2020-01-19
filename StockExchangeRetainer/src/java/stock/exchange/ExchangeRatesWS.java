@@ -15,6 +15,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
+import project.utils.XMLUtils;
 import stock.exchange.prices.Stock;
 import stock.exchange.prices.StocksList;
 
@@ -46,6 +47,7 @@ public class ExchangeRatesWS {
         //externalStockPrices.updatePrices();
         for (Stock stock : stocks.getStocks()) {
             stock.getPrice().setValue(symbolValuePairs.getOrDefault(stock.getCompanySymbol(), stock.getPrice().getValue()));
+            stock.getPrice().setLastUpdated(XMLUtils.currentDate());
         }
 
         return stocks;
@@ -60,6 +62,7 @@ public class ExchangeRatesWS {
         //commented out due to api quota
         //externalStockPrices.updatePrices();
         stock.getPrice().setValue(symbolValuePairs.getOrDefault(stock.getCompanySymbol(), stock.getPrice().getValue()));
+        stock.getPrice().setLastUpdated(XMLUtils.currentDate());
         return stock;
     }
 
