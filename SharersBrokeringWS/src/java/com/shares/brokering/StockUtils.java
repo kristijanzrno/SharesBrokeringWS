@@ -15,12 +15,11 @@ import project.utils.XMLUtils;
  *
  * @author kristijanzrno
  */
-public class StockUtils{
+public class StockUtils {
 
     StocksList stocksList;
     StockExchangeRetainerClient stockExchangeClient;
 
-    
     CurrencyConversionWSService service;
     docwebservices.currency.convertor.CurrencyConversionWS port;
 
@@ -130,8 +129,8 @@ public class StockUtils{
     private void saveStocks() {
         XMLUtils.marshallObject(stocksList, new File("stocks.xml"));
     }
-    
-       private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
+
+    private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         return port.getConversionRate(arg0, arg1);
     }
 

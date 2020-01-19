@@ -16,7 +16,7 @@ import java.net.URL;
  * @author kristijanzrno
  */
 public class URLUtils {
-    
+
     public static String readURL(String request) throws MalformedURLException, IOException {
         BufferedReader reader = null;
         try {
@@ -25,13 +25,14 @@ public class URLUtils {
             StringBuffer buffer = new StringBuffer();
             int read;
             char[] chars = new char[1024];
-            while ((read = reader.read(chars)) != -1)
-                buffer.append(chars, 0, read); 
+            while ((read = reader.read(chars)) != -1) {
+                buffer.append(chars, 0, read);
+            }
             return buffer.toString();
-       }finally {
-            if (reader != null)
+        } finally {
+            if (reader != null) {
                 reader.close();
+            }
         }
     }
 }
-

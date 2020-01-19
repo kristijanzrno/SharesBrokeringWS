@@ -16,22 +16,24 @@ import project.utils.XMLUtils;
  * @author kristijanzrno
  */
 public class RatesClient {
+
     private static final String API_URL = "https://api.exchangeratesapi.io/latest?base=USD";
-    
-    public RatesClient(){
+
+    public RatesClient() {
         fetchRates();
     }
-    
-    public boolean fetchRates(){
+
+    public boolean fetchRates() {
         //fetch
-        try{
-            saved.rates.Rates parsedRates  = new saved.rates.Rates();
+        try {
+            saved.rates.Rates parsedRates = new saved.rates.Rates();
             String json = URLUtils.readURL(API_URL);
             JSONObject rates = new JSONObject(json).getJSONObject("rates");
-            if(rates == null)
+            if (rates == null) {
                 return false;
+            }
             Iterator<String> keys = rates.keys();
-            while(keys.hasNext()){
+            while (keys.hasNext()) {
                 String key = keys.next();
                 double value = rates.getDouble(key);
                 saved.rates.Rate rate = new saved.rates.Rate();
@@ -40,15 +42,15 @@ public class RatesClient {
                 parsedRates.getRate().add(rate);
             }
             saveRates(parsedRates);
-            
-        }catch (Exception e){
+
+        } catch (Exception e) {
             return false;
         }
-       
+
         return true;
     }
-    
-    private boolean saveRates(saved.rates.Rates rates){
+
+    private boolean saveRates(saved.rates.Rates rates) {
         XMLUtils.marshallObject(rates, new File("rates.xml"));
         return false;
     }

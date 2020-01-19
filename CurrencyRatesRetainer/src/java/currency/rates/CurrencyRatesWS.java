@@ -26,7 +26,6 @@ public class CurrencyRatesWS {
     @Context
     private UriInfo context;
 
-    
     public CurrencyRatesWS() {
         RatesClient rates = new RatesClient();
     }

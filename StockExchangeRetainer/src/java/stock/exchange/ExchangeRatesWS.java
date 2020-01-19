@@ -14,10 +14,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import project.utils.XMLUtils;
-import stock.exchange.prices.Stock;
-import stock.exchange.prices.StocksList;
+import stock.exchange.prices.*;
+import stock.exchange.values.*;
 
 /**
  * REST Web Service
@@ -69,15 +70,8 @@ public class ExchangeRatesWS {
     @Path("/getprices")
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public String getPrices() {
-        return "";
-
+    public StockPricesList getPrices() {
+        return externalStockPrices.getStockPrices();
     }
 
-    @Path("/getprice/{symbol}")
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public String getPrice(@PathParam("symbol") String symbol) {
-        return symbol;
-    }
 }
