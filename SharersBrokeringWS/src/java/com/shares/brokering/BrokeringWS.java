@@ -91,5 +91,26 @@ public class BrokeringWS {
         }
         return new AccountUtils().getAllUsernameStocks(authUsername);
     }
+    
+    @WebMethod(operationName = "changeStockAccess")
+    public boolean changeStockAccess(String authUsername, String authPassword, String companySymbol, boolean blocked){
+        if (!Auth.authenticateAdmin(authUsername, authPassword)) {
+            return false;
+        }
+        return new StockUtils(service).changeStockAccess(companySymbol, blocked);
+    }
+    
+    @WebMethod(operationName = "changeAccountAccess")
+    public boolean changeAccountAccess(String authUsername, String authPassword, String accountName, boolean blocked){
+        if (!Auth.authenticateAdmin(authUsername, authPassword)) {
+            return false;
+        }
+        return new AccountUtils().changeAccountAccess(accountName, blocked);
+    }
+    
+    @WebMethod(operationName = "login")
+    public boolean login(String authUsername, String authPassword){
+        return (Auth.authenticate(authUsername, authPassword));
+    }
 
 }

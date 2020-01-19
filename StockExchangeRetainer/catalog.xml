@@ -4,4 +4,5 @@
     <system systemId="file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/StockExchangeRetainer/Shares.xsd" uri="src/conf/xml-resources/jaxb/stocks/Shares.xsd"/>
     <system systemId="file:/Users/kristijanzrno/NetBeansProjects/SharesBrokeringWS/StockExchangeRetainer/CompanyValue.xsd" uri="src/conf/xml-resources/jaxb/StockPrices/CompanyValue.xsd"/>
     <system systemId="file:/Users/kristijanzrno/Documents/SharesBrokeringWS/StockExchangeRetainer/CompanyValue.xsd" uri="src/conf/xml-resources/jaxb/StockPrices/CompanyValue.xsd"/>
+    <system systemId="file:/Users/kristijanzrno/Documents/SharesBrokeringWS/StockExchangeRetainer/Shares.xsd" uri="src/conf/xml-resources/jaxb/stocks/Shares.xsd"/>
 </catalog>

@@ -4,31 +4,31 @@
 <xsd:import namespace="http://DOCwebServices/" schemaLocation="http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="GetCurrencyCodes">
-<part name="parameters" element="tns:GetCurrencyCodes"/>
-</message>
-<message name="GetCurrencyCodesResponse">
-<part name="parameters" element="tns:GetCurrencyCodesResponse"/>
-</message>
 <message name="GetConversionRate">
 <part name="parameters" element="tns:GetConversionRate"/>
 </message>
 <message name="GetConversionRateResponse">
 <part name="parameters" element="tns:GetConversionRateResponse"/>
 </message>
+<message name="GetCurrencyCodes">
+<part name="parameters" element="tns:GetCurrencyCodes"/>
+</message>
+<message name="GetCurrencyCodesResponse">
+<part name="parameters" element="tns:GetCurrencyCodesResponse"/>
+</message>
 <portType name="CurrencyConversionWS">
-<operation name="GetCurrencyCodes">
-<input wsam:Action="http://DOCwebServices/CurrencyConversionWS/GetCurrencyCodesRequest" message="tns:GetCurrencyCodes"/>
-<output wsam:Action="http://DOCwebServices/CurrencyConversionWS/GetCurrencyCodesResponse" message="tns:GetCurrencyCodesResponse"/>
-</operation>
 <operation name="GetConversionRate">
 <input wsam:Action="http://DOCwebServices/CurrencyConversionWS/GetConversionRateRequest" message="tns:GetConversionRate"/>
 <output wsam:Action="http://DOCwebServices/CurrencyConversionWS/GetConversionRateResponse" message="tns:GetConversionRateResponse"/>
 </operation>
+<operation name="GetCurrencyCodes">
+<input wsam:Action="http://DOCwebServices/CurrencyConversionWS/GetCurrencyCodesRequest" message="tns:GetCurrencyCodes"/>
+<output wsam:Action="http://DOCwebServices/CurrencyConversionWS/GetCurrencyCodesResponse" message="tns:GetCurrencyCodesResponse"/>
+</operation>
 </portType>
 <binding name="CurrencyConversionWSPortBinding" type="tns:CurrencyConversionWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="GetCurrencyCodes">
+<operation name="GetConversionRate">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="GetConversionRate">
+<operation name="GetCurrencyCodes">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

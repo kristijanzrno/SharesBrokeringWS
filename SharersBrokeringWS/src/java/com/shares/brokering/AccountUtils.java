@@ -31,7 +31,6 @@ public class AccountUtils {
             }
 
         }
-        System.out.println("test");
 
     }
 
@@ -74,6 +73,7 @@ public class AccountUtils {
             stock.setCompanySymbol(companySymbol);
             stock.setCompanyName(companyName);
             stock.setNoOfBoughtShares(value);
+            stock.setDateBought(XMLUtils.currentDate());
             if (getAccount(username).getAccountBoughtStocks() == null) {
                 getAccount(username).setAccountBoughtStocks(new BoughtStocks());
             }
@@ -130,6 +130,12 @@ public class AccountUtils {
             return null;
         }
         return getAccount(account).getAccountBoughtStocks().getBoughtStock();
+    }
+     
+    public boolean changeAccountAccess(String account, boolean blocked){
+        getAccount(account).setBlocked(blocked);
+        saveAccounts();
+        return true;
     }
 
     private BoughtStock getAccountStock(Account account, String companySymbol) {

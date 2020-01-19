@@ -35,7 +35,7 @@ public class StockUtils {
     public boolean buyStock(String username, String companySymbol, int value) {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
-                if (stock.getNoOfAvailableShares() >= value) {
+                if (stock.getNoOfAvailableShares() >= value && !stock.isBlocked()) {
                     //add stock to the user
                     if (new AccountUtils().addShare(username, stock.getCompanySymbol(), stock.getCompanyName(), value)) {
                         stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() - value);
@@ -43,6 +43,7 @@ public class StockUtils {
                         return true;
                     }
                 }
+                break;
             }
         }
         return false;
@@ -52,11 +53,12 @@ public class StockUtils {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
                 //remove stock from the user
-                if (new AccountUtils().removeShare(username, stock.getCompanySymbol(), value)) {
+                if (!stock.isBlocked() && new AccountUtils().removeShare(username, stock.getCompanySymbol(), value)) {
                     stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() + value);
                     saveStocks();
                     return true;
                 }
+                break;
             }
         }
         return false;
@@ -122,6 +124,12 @@ public class StockUtils {
             return false;
         }
         stocksList = updatedStocks;
+        saveStocks();
+        return true;
+    }
+    
+    public boolean changeStockAccess(String companySymbol, boolean blocked){
+        getStock(companySymbol, "USD").setBlocked(blocked);
         saveStocks();
         return true;
     }
