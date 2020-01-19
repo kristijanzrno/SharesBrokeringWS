@@ -14,16 +14,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import org.json.JSONException;
 import org.json.JSONObject;
 import project.utils.URLUtils;
 import project.utils.XMLUtils;
+import stock.exchange.values.CompanyPrice;
 import stock.exchange.values.Price;
-import stock.exchange.values.StockPrice;
 import stock.exchange.values.StockPricesList;
 
 /**
@@ -41,7 +39,7 @@ public class StockPricesClient {
 
     //Run only on first run
     public void initialisePrices() {
-    File f = new File("prices.xml");
+        File f = new File("prices.xml");
         if (!f.exists()) {
             try {
                 f.createNewFile();
@@ -59,7 +57,7 @@ public class StockPricesClient {
         try (BufferedReader br = new BufferedReader(new FileReader(stocksFile))) {
             String line;
             while ((line = br.readLine()) != null) {
-                StockPrice stockPrice = new StockPrice();
+                CompanyPrice stockPrice = new CompanyPrice();
                 stockPrice.setCompanySymbol(line.split(";;")[0]);
                 Price price = new Price();
                 price.setCurrency("USD");
@@ -145,11 +143,25 @@ public class StockPricesClient {
 
     }
 
-    public HashMap<String, Double> getSymbolValuePairs(){
+    public StockPricesList getStockPrices() {
+        return (StockPricesList) XMLUtils.unmarshallObject(new File("prices.xml"), "stock.exchange.values");
+    }
+
+    public CompanyPrice getStockPrice(String symbol) {
+        for (CompanyPrice price : getStockPrices().getStockPrice()) {
+            if (price.getCompanySymbol().toUpperCase().equals(symbol.toUpperCase())) {
+                return price;
+            }
+        }
+        return null;
+    }
+
+    public HashMap<String, Double> getSymbolValuePairs() {
         HashMap<String, Double> symbolValuePairs = new HashMap();
         StockPricesList prices = (StockPricesList) XMLUtils.unmarshallObject(new File("prices.xml"), "stock.exchange.values");
-        for(StockPrice price : prices.getStockPrice())
+        for (CompanyPrice price : prices.getStockPrice()) {
             symbolValuePairs.put(price.getCompanySymbol(), price.getPrice().getValue());
+        }
         return symbolValuePairs;
     }
 }

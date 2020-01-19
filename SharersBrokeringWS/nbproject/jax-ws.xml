@@ -9,7 +9,7 @@
     <client name="CurrencyConversionWSService">
       <wsdl-url>http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl</local-wsdl-file>
-      <package-name>docwebservices</package-name>
+      <package-name forceReplace="true">docwebservices.currency.convertor</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -35,6 +35,10 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>docwebservices.currency.convertor</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

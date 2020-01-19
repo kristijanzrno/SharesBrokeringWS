@@ -20,10 +20,9 @@ import project.utils.XMLUtils;
  * @author kristijanzrno
  */
 public class StockInitialiser {
- 
-    
 
-    public StockInitialiser() {}
+    public StockInitialiser() {
+    }
 
     public void initialise() {
         File f = new File("stocks.xml");
@@ -51,6 +50,7 @@ public class StockInitialiser {
                 stock.setNoOfAvailableShares(50000);
                 Data.Price price = new Data.Price();
                 price.setCurrency("USD");
+                price.setLastUpdated(XMLUtils.currentDate());
                 price.setValue(0.0);
                 stock.setPrice(price);
                 stocks.getStocks().add(stock);
@@ -60,6 +60,5 @@ public class StockInitialiser {
         }
         XMLUtils.marshallObject(stocks, new File("stocks.xml"));
     }
-    
 
 }

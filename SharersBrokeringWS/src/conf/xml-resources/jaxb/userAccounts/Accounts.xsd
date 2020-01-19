@@ -27,6 +27,7 @@
             <xsd:element name="account_name" type="xsd:string"/>
             <xsd:element name="account_password" type="xsd:string"/>
             <xsd:element name="account_level" type="xsd:int"/>
+            <xsd:element name="blocked" type="xsd:boolean"/>
             <xsd:element name="account_bought_stocks" type="tns:bought_stocks"/>
         </xsd:sequence>
     </xsd:complexType>

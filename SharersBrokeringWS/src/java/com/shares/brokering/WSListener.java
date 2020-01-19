@@ -5,7 +5,6 @@
  */
 package com.shares.brokering;
 
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -15,21 +14,19 @@ import javax.servlet.annotation.WebListener;
  * @author kristijanzrno
  */
 @WebListener
-public class WSListener implements ServletContextListener{
+public class WSListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-       StockInitialiser initialiser = new StockInitialiser();
-       //Use during server setup only
-       //initialiser.initialise();
+        StockInitialiser initialiser = new StockInitialiser();
+        //Use during server setup only
+        //initialiser.initialise();
 
-       
-       
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        
+
     }
-    
+
 }

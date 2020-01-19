@@ -11,6 +11,7 @@
             <xsd:element name="currency" type="xsd:string"/>
             <xsd:element name="value" type="xsd:double"/>
             <xsd:element name="last_updated" type="xsd:date"/>
+
         </xsd:sequence>
     </xsd:complexType>
     
@@ -20,6 +21,7 @@
             <xsd:element name="company_symbol" type="xsd:string"/>
             <xsd:element name="no_of_available_shares" type="xsd:int"/>
             <xsd:element name="price" type="tns:price"/>
+            <xsd:element name="blocked" type="xsd:boolean"/>
         </xsd:sequence>
     </xsd:complexType>
 

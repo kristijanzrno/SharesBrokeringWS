@@ -5,12 +5,15 @@
  */
 package com.shares.brokering;
 
-import java.util.List;
-import javax.jws.WebService;
-import javax.jws.WebMethod;
-import javax.ejb.Stateless;
 import Data.*;
+import docwebservices.currency.convertor.CurrencyConversionWSService;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.WebServiceRef;
 import sharers.brokering.useraccounts.Account;
+import sharers.brokering.useraccounts.*;
 
 /**
  *
@@ -20,18 +23,17 @@ import sharers.brokering.useraccounts.Account;
 @Stateless()
 public class BrokeringWS {
 
-    AccountUtils accountUtils;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
+    private CurrencyConversionWSService service;
 
-    public BrokeringWS() {
-        accountUtils = new AccountUtils();
-    }
+    public BrokeringWS() {}
 
     @WebMethod(operationName = "getStock")
     public Stock getStock(String authUsername, String authPassword, String companySymbol, String currency) {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return null;
         }
-        return new StockUtils().getStock(companySymbol, currency);
+        return new StockUtils(service).getStock(companySymbol, currency);
     }
 
     @WebMethod(operationName = "getAllStocks")
@@ -39,7 +41,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return null;
         }
-        return new StockUtils().getAllStocks(currency);
+        return new StockUtils(service).getAllStocks(currency);
     }
 
     @WebMethod(operationName = "buyStock")
@@ -47,7 +49,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-        return new StockUtils().buyStock(authUsername, companySymbol, value);
+        return new StockUtils(service).buyStock(authUsername, companySymbol, value);
     }
 
     @WebMethod(operationName = "sellStock")
@@ -55,7 +57,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-        return new StockUtils().sellStock(authUsername, companySymbol, value);
+        return new StockUtils(service).sellStock(authUsername, companySymbol, value);
     }
 
     @WebMethod(operationName = "createAccount")
@@ -63,7 +65,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-        return accountUtils.createAccount(accountUsername, accountPassword, accountLevel);
+        return new AccountUtils().createAccount(accountUsername, accountPassword, accountLevel);
     }
 
     @WebMethod(operationName = "deleteAccount")
@@ -71,7 +73,7 @@ public class BrokeringWS {
         if (!Auth.authenticateAdmin(authUsername, authPassword)) {
             return false;
         }
-        return accountUtils.deleteAccount(accountUsername);
+        return new AccountUtils().deleteAccount(accountUsername);
     }
 
     @WebMethod(operationName = "getAccounts")
@@ -79,7 +81,36 @@ public class BrokeringWS {
         if (!Auth.authenticateAdmin(authUsername, authPassword)) {
             return null;
         }
-        return accountUtils.getAccounts();
+        return new AccountUtils().getAccounts();
+    }
+    
+    @WebMethod(operationName = "getAllAccountShares")
+    public List<BoughtStock> getAllAccountShares(String authUsername, String authPassword) {
+        if (!Auth.authenticate(authUsername, authPassword)) {
+            return null;
+        }
+        return new AccountUtils().getAllUsernameStocks(authUsername);
+    }
+    
+    @WebMethod(operationName = "changeStockAccess")
+    public boolean changeStockAccess(String authUsername, String authPassword, String companySymbol, boolean blocked){
+        if (!Auth.authenticateAdmin(authUsername, authPassword)) {
+            return false;
+        }
+        return new StockUtils(service).changeStockAccess(companySymbol, blocked);
+    }
+    
+    @WebMethod(operationName = "changeAccountAccess")
+    public boolean changeAccountAccess(String authUsername, String authPassword, String accountName, boolean blocked){
+        if (!Auth.authenticateAdmin(authUsername, authPassword)) {
+            return false;
+        }
+        return new AccountUtils().changeAccountAccess(accountName, blocked);
+    }
+    
+    @WebMethod(operationName = "login")
+    public boolean login(String authUsername, String authPassword){
+        return (Auth.authenticate(authUsername, authPassword));
     }
 
 }

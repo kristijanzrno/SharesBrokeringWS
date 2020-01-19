@@ -9,7 +9,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.StringReader;
-
+import java.time.Instant;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  *
@@ -39,9 +45,9 @@ public class XMLUtils {
         }
         return null;
     }
-    
-    public static Object unmarshallObjectFromString(String data, String context){
-         try {
+
+    public static Object unmarshallObjectFromString(String data, String context) {
+        try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(context);
             javax.xml.bind.Unmarshaller unmarshaller = jaxbCtx.createUnmarshaller();
             return unmarshaller.unmarshal(new StringReader(data));
@@ -59,7 +65,7 @@ public class XMLUtils {
             br = new BufferedReader(new FileReader(file));
             String line;
             while ((line = br.readLine()) != null) {
-                sb.append(line+"\n");
+                sb.append(line + "\n");
             }
             result = sb.toString();
         } catch (Exception e) {
@@ -68,4 +74,16 @@ public class XMLUtils {
         return result;
     }
 
+    public static XMLGregorianCalendar currentDate() {
+        Date date = new Date();
+        Instant instant = date.toInstant();
+        String dateTime = instant.toString();
+        XMLGregorianCalendar xmlDate = null;
+        try {
+            xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(dateTime);
+        } catch (DatatypeConfigurationException ex) {
+            Logger.getLogger(XMLUtils.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return xmlDate;
+    }
 }
