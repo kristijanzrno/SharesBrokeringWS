@@ -6,6 +6,7 @@
 package com.shares.brokering;
 
 import Data.*;
+import docwebservices.currency.convertor.CurrencyConversionWSService;
 import java.io.File;
 import java.util.List;
 import project.utils.XMLUtils;
@@ -14,13 +15,20 @@ import project.utils.XMLUtils;
  *
  * @author kristijanzrno
  */
-public class StockUtils {
+public class StockUtils{
 
     StocksList stocksList;
     StockExchangeRetainerClient stockExchangeClient;
 
+    
+    CurrencyConversionWSService service;
+    docwebservices.currency.convertor.CurrencyConversionWS port;
 
-    public StockUtils() {
+    public StockUtils(CurrencyConversionWSService service) {
+        // Initialising currency conversion service & service port once instead of at every "getConversionRate()" call
+        // This improves the performance 3-4x on the large dataset (e.g. in getAllStocks() method)
+        this.service = service;
+        port = service.getCurrencyConversionWSPort();
         stocksList = (StocksList) XMLUtils.unmarshallObject(new File("stocks.xml"), "Data");
         stockExchangeClient = new StockExchangeRetainerClient();
     }
@@ -44,13 +52,13 @@ public class StockUtils {
     public boolean sellStock(String username, String companySymbol, int value) {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
-                    //remove stock from the user
-                    if (new AccountUtils().removeShare(username, stock.getCompanySymbol(), value)) {
-                        stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() + value);
-                        saveStocks();
-                        return true;
-                    }
+                //remove stock from the user
+                if (new AccountUtils().removeShare(username, stock.getCompanySymbol(), value)) {
+                    stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() + value);
+                    saveStocks();
+                    return true;
                 }
+            }
         }
         return false;
     }
@@ -122,10 +130,8 @@ public class StockUtils {
     private void saveStocks() {
         XMLUtils.marshallObject(stocksList, new File("stocks.xml"));
     }
-
-    private static double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
-        docwebservices.CurrencyConversionWSService service = new docwebservices.CurrencyConversionWSService();
-        docwebservices.CurrencyConversionWS port = service.getCurrencyConversionWSPort();
+    
+       private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         return port.getConversionRate(arg0, arg1);
     }
 

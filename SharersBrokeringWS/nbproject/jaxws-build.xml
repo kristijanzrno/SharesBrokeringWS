@@ -45,7 +45,7 @@
     </target>
     <target name="wsimport-client-CurrencyConversionWSService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService" destdir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CurrencyConversionWSService/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService?WSDL" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService" destdir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CurrencyConversionWSService/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CurrencyConvertor/CurrencyConversionWSService?WSDL" xnocompile="true" xendorsed="true" package="docwebservices.currency.convertor">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CurrencyConversionWSService/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService"/>
         </wsimport>
@@ -56,7 +56,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-CurrencyConversionWSService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/docwebservices"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/docwebservices/currency/convertor"/>
         <delete dir="${build.generated.dir}/jax-wsCache/CurrencyConversionWSService"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-CurrencyConversionWSService"/>

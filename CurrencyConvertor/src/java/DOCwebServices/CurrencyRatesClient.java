@@ -8,6 +8,7 @@ package DOCwebServices;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
+import saved.currency.rates.Rates;
 
 /**
  *
@@ -23,8 +24,8 @@ public class CurrencyRatesClient {
         webTarget = client.target(SERVICE_URL);
     }
     
-    public String getRates(){
-        return webTarget.path("currencyrates").request().get(String.class);
+    public Rates getRates(){
+        return webTarget.path("CurrencyRates").path("getRates").request().get(Rates.class);
     }
     
 }

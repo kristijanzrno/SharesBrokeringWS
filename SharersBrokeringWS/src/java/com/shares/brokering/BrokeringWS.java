@@ -5,11 +5,13 @@
  */
 package com.shares.brokering;
 
-import java.util.List;
-import javax.jws.WebService;
-import javax.jws.WebMethod;
-import javax.ejb.Stateless;
 import Data.*;
+import docwebservices.currency.convertor.CurrencyConversionWSService;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.xml.ws.WebServiceRef;
 import sharers.brokering.useraccounts.Account;
 
 /**
@@ -19,6 +21,9 @@ import sharers.brokering.useraccounts.Account;
 @WebService(serviceName = "BrokeringWS")
 @Stateless()
 public class BrokeringWS {
+
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
+    private CurrencyConversionWSService service;
 
     AccountUtils accountUtils;
 
@@ -31,7 +36,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return null;
         }
-        return new StockUtils().getStock(companySymbol, currency);
+        return new StockUtils(service).getStock(companySymbol, currency);
     }
 
     @WebMethod(operationName = "getAllStocks")
@@ -39,7 +44,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return null;
         }
-        return new StockUtils().getAllStocks(currency);
+        return new StockUtils(service).getAllStocks(currency);
     }
 
     @WebMethod(operationName = "buyStock")
@@ -47,7 +52,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-        return new StockUtils().buyStock(authUsername, companySymbol, value);
+        return new StockUtils(service).buyStock(authUsername, companySymbol, value);
     }
 
     @WebMethod(operationName = "sellStock")
@@ -55,7 +60,7 @@ public class BrokeringWS {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-        return new StockUtils().sellStock(authUsername, companySymbol, value);
+        return new StockUtils(service).sellStock(authUsername, companySymbol, value);
     }
 
     @WebMethod(operationName = "createAccount")
@@ -81,5 +86,7 @@ public class BrokeringWS {
         }
         return accountUtils.getAccounts();
     }
+
+ 
 
 }
