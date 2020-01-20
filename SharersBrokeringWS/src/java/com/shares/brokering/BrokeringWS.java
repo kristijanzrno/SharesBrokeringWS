@@ -108,8 +108,9 @@ public class BrokeringWS {
         return new AccountUtils().changeAccountAccess(accountName, blocked);
     }
     
-    @WebMethod(operationName = "login")
+    @WebMethod(action = "login")
     public boolean login(String authUsername, String authPassword){
+        System.out.println(authUsername + " - " + authPassword);
         return (Auth.authenticate(authUsername, authPassword));
     }
 
