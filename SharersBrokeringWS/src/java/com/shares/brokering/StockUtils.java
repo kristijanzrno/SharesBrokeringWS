@@ -138,7 +138,12 @@ public class StockUtils {
         XMLUtils.marshallObject(stocksList, new File("stocks.xml"));
     }
 
-    private double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
+    
+     public List<String> getCurrencyList() {
+        return port.getCurrencyCodes();
+    }
+     
+    public double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         return port.getConversionRate(arg0, arg1);
     }
 

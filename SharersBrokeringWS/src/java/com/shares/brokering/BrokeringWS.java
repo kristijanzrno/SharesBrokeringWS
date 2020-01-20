@@ -108,10 +108,18 @@ public class BrokeringWS {
         return new AccountUtils().changeAccountAccess(accountName, blocked);
     }
     
-    @WebMethod(action = "login")
+    @WebMethod(operationName = "login")
     public boolean login(String authUsername, String authPassword){
         System.out.println(authUsername + " - " + authPassword);
         return (Auth.authenticate(authUsername, authPassword));
     }
-
+    
+    @WebMethod(operationName = "getCurrencyList")
+    public List<String> getCurrencyList(String authUsername, String authPassword){
+        if (!Auth.authenticate(authUsername, authPassword)) {
+            return null;
+        }
+        return new StockUtils(service).getCurrencyList();
+    }
+ 
 }

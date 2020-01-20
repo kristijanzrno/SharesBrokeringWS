@@ -16,7 +16,7 @@ public class Auth {
     public static boolean authenticate(String username, String password) {
         AccountUtils accountUtils = new AccountUtils();
         for (Account account : accountUtils.getAccounts()) {
-            if (account.getAccountName().equals(username) && account.getAccountPassword().equals(password)) {
+            if (account.getAccountName().equals(username) && account.getAccountPassword().equals(password) && !account.isBlocked()) {
                 return true;
             }
         }
