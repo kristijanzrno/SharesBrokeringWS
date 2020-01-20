@@ -8,6 +8,9 @@ package com.shares.brokering;
 import Data.*;
 import docwebservices.currency.convertor.CurrencyConversionWSService;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import project.utils.XMLUtils;
 
@@ -88,6 +91,36 @@ public class StockUtils {
             }
         }
         return stocksList.getStocks();
+    }
+    
+    public List<Stock> searchStocks(String searchFor, String orderBy, String currency){
+        List<Stock> stocks = new ArrayList<Stock>();
+        System.out.println(searchFor);
+        for(Stock stock : stocksList.getStocks()){
+            if(stock.getCompanyName().toLowerCase().contains(searchFor.toLowerCase()) || stock.getCompanySymbol().toLowerCase().contains(searchFor.toLowerCase())){
+                if (!currency.equals("USD") && !currency.isEmpty()) {
+                    double conversionRate = getConversionRate(currency.toUpperCase(), "USD");
+                    stock.getPrice().setCurrency(currency.toUpperCase());
+                    stock.getPrice().setValue(stock.getPrice().getValue() * conversionRate);
+                }
+                stocks.add(stock);
+            }
+        }
+        switch(orderBy){
+            case "name-asc":
+                Collections.sort(stocks, (o1,o2) -> o1.getCompanyName().toLowerCase().compareTo(o2.getCompanyName().toLowerCase()));
+                break;
+            case "name-desc":
+                Collections.sort(stocks, (o2,o1) -> o1.getCompanyName().compareTo(o2.getCompanyName()));
+                break;
+            case "price-lth":
+                Collections.sort(stocks, Comparator.comparingDouble(o -> o.getPrice().getValue()));
+                break;
+            case "price-htl":
+                Collections.sort(stocks, Comparator.comparingDouble((Stock o) -> o.getPrice().getValue()).reversed());
+                break;
+        }
+        return stocks;
     }
 
     public StocksList getAllStocksObj(String currency) {

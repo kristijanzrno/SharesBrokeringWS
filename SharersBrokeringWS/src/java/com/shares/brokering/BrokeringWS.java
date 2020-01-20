@@ -110,7 +110,6 @@ public class BrokeringWS {
     
     @WebMethod(operationName = "login")
     public boolean login(String authUsername, String authPassword){
-        System.out.println(authUsername + " - " + authPassword);
         return (Auth.authenticate(authUsername, authPassword));
     }
     
@@ -120,6 +119,24 @@ public class BrokeringWS {
             return null;
         }
         return new StockUtils(service).getCurrencyList();
+    }
+    
+    @WebMethod(operationName = "changeAccountPassword")
+    public boolean changeAccountPassword(String authUsername, String authPassword, String newPassword){
+         if (!Auth.authenticate(authUsername, authPassword)) {
+            return false;
+        }
+         return new AccountUtils().changeAccountPassword(authUsername, newPassword);
+    }
+    
+    @WebMethod(operationName = "searchStocks")
+    public List<Stock> searchStocks(String authUsername, String authPassword, String searchFor, String orderBy, String currency){
+         System.out.println("searching...");
+         if (!Auth.authenticate(authUsername, authPassword)) {
+            return null;
+        }
+         System.out.println("test");
+        return new StockUtils(service).searchStocks(searchFor, orderBy, currency);
     }
  
 }

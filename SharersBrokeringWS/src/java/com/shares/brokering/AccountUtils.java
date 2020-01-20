@@ -137,6 +137,12 @@ public class AccountUtils {
         saveAccounts();
         return true;
     }
+    
+    public boolean changeAccountPassword(String account, String password){
+        getAccount(account).setAccountPassword(password);
+        saveAccounts();
+        return true;
+    }
 
     private BoughtStock getAccountStock(Account account, String companySymbol) {
         if (getAllAccountStocks(account) == null) {
