@@ -71,7 +71,7 @@ public class StockUtils {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
                 if (!currency.equals("USD") && !currency.isEmpty()) {
-                    double conversionRate = getConversionRate("USD", currency.toUpperCase());
+                    double conversionRate = getConversionRate(currency.toUpperCase(), "USD");
                     stock.getPrice().setCurrency(currency);
                     stock.getPrice().setValue(stock.getPrice().getValue() * conversionRate);
                 }
