@@ -113,6 +113,11 @@ public class BrokeringWS {
     public boolean login(String authUsername, String authPassword) {
         return (Auth.authenticate(authUsername, authPassword));
     }
+    
+    @WebMethod(operationName = "isAdmin")
+    public boolean isAdmin(String authUsername, String authPassword){
+        return (Auth.authenticateAdmin(authUsername, authPassword));
+    }
 
     @WebMethod(operationName = "getCurrencyList")
     public List<String> getCurrencyList(String authUsername, String authPassword) {

@@ -38,7 +38,7 @@ public class StockUtils {
     public boolean buyStock(String username, String companySymbol, int value) {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
-                if (stock.getNoOfAvailableShares() >= value && !stock.isBlocked()) {
+                if (stock.getNoOfAvailableShares() >= value && !stock.isBlocked() && value > 0) {
                     //add stock to the user
                     if (new AccountUtils().addShare(username, stock.getCompanySymbol(), stock.getCompanyName(), value)) {
                         stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() - value);
@@ -96,7 +96,7 @@ public class StockUtils {
     public List<Stock> searchStocks(String searchFor, String orderBy, String currency) {
         List<Stock> stocks = new ArrayList<>();
         for (Stock stock : stocksList.getStocks()) {
-            if (stock.getCompanyName().toLowerCase().contains(searchFor.toLowerCase()) || stock.getCompanySymbol().toLowerCase().contains(searchFor.toLowerCase())) {
+            if (stock.getCompanyName().toLowerCase().contains(searchFor.toLowerCase()) || stock.getCompanySymbol().toLowerCase().contains(searchFor.toLowerCase()) || searchFor.isEmpty()) {
                 if (!currency.equals("USD") && !currency.isEmpty()) {
                     double conversionRate = getConversionRate(currency.toUpperCase(), "USD");
                     stock.getPrice().setCurrency(currency.toUpperCase());
@@ -183,5 +183,6 @@ public class StockUtils {
     public double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         return port.getConversionRate(arg0, arg1);
     }
+    
 
 }
