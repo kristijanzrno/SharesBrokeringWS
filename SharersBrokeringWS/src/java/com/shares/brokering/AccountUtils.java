@@ -60,7 +60,7 @@ public class AccountUtils {
             }
         }
         saveAccounts();
-        return false;
+        return true;
     }
 
     public boolean addShare(String username, String companySymbol, String companyName, int value) {

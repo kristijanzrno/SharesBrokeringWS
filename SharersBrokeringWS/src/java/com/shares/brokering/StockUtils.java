@@ -92,12 +92,11 @@ public class StockUtils {
         }
         return stocksList.getStocks();
     }
-    
-    public List<Stock> searchStocks(String searchFor, String orderBy, String currency){
-        List<Stock> stocks = new ArrayList<Stock>();
-        System.out.println(searchFor);
-        for(Stock stock : stocksList.getStocks()){
-            if(stock.getCompanyName().toLowerCase().contains(searchFor.toLowerCase()) || stock.getCompanySymbol().toLowerCase().contains(searchFor.toLowerCase())){
+
+    public List<Stock> searchStocks(String searchFor, String orderBy, String currency) {
+        List<Stock> stocks = new ArrayList<>();
+        for (Stock stock : stocksList.getStocks()) {
+            if (stock.getCompanyName().toLowerCase().contains(searchFor.toLowerCase()) || stock.getCompanySymbol().toLowerCase().contains(searchFor.toLowerCase())) {
                 if (!currency.equals("USD") && !currency.isEmpty()) {
                     double conversionRate = getConversionRate(currency.toUpperCase(), "USD");
                     stock.getPrice().setCurrency(currency.toUpperCase());
@@ -106,18 +105,24 @@ public class StockUtils {
                 stocks.add(stock);
             }
         }
-        switch(orderBy){
+        switch (orderBy) {
             case "name-asc":
-                Collections.sort(stocks, (o1,o2) -> o1.getCompanyName().toLowerCase().compareTo(o2.getCompanyName().toLowerCase()));
+                Collections.sort(stocks, (o1, o2) -> o1.getCompanyName().toLowerCase().compareTo(o2.getCompanyName().toLowerCase()));
                 break;
             case "name-desc":
-                Collections.sort(stocks, (o2,o1) -> o1.getCompanyName().compareTo(o2.getCompanyName()));
+                Collections.sort(stocks, (o2, o1) -> o1.getCompanyName().compareTo(o2.getCompanyName()));
                 break;
             case "price-lth":
                 Collections.sort(stocks, Comparator.comparingDouble(o -> o.getPrice().getValue()));
                 break;
             case "price-htl":
                 Collections.sort(stocks, Comparator.comparingDouble((Stock o) -> o.getPrice().getValue()).reversed());
+                break;
+            case "available-shares-lth":
+                Collections.sort(stocks, Comparator.comparingInt(o -> o.getNoOfAvailableShares()));
+                break;
+            case "available-shares-htl":
+                Collections.sort(stocks, Comparator.comparingInt((Stock o) -> o.getNoOfAvailableShares()).reversed());
                 break;
         }
         return stocks;
@@ -160,8 +165,8 @@ public class StockUtils {
         saveStocks();
         return true;
     }
-    
-    public boolean changeStockAccess(String companySymbol, boolean blocked){
+
+    public boolean changeStockAccess(String companySymbol, boolean blocked) {
         getStock(companySymbol, "USD").setBlocked(blocked);
         saveStocks();
         return true;
@@ -171,11 +176,10 @@ public class StockUtils {
         XMLUtils.marshallObject(stocksList, new File("stocks.xml"));
     }
 
-    
-     public List<String> getCurrencyList() {
+    public List<String> getCurrencyList() {
         return port.getCurrencyCodes();
     }
-     
+
     public double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         return port.getConversionRate(arg0, arg1);
     }

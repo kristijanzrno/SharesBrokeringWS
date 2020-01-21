@@ -26,7 +26,8 @@ public class BrokeringWS {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/CurrencyConvertor/CurrencyConversionWSService.wsdl")
     private CurrencyConversionWSService service;
 
-    public BrokeringWS() {}
+    public BrokeringWS() {
+    }
 
     @WebMethod(operationName = "getStock")
     public Stock getStock(String authUsername, String authPassword, String companySymbol, String currency) {
@@ -83,7 +84,7 @@ public class BrokeringWS {
         }
         return new AccountUtils().getAccounts();
     }
-    
+
     @WebMethod(operationName = "getAllAccountShares")
     public List<BoughtStock> getAllAccountShares(String authUsername, String authPassword) {
         if (!Auth.authenticate(authUsername, authPassword)) {
@@ -91,52 +92,50 @@ public class BrokeringWS {
         }
         return new AccountUtils().getAllUsernameStocks(authUsername);
     }
-    
+
     @WebMethod(operationName = "changeStockAccess")
-    public boolean changeStockAccess(String authUsername, String authPassword, String companySymbol, boolean blocked){
+    public boolean changeStockAccess(String authUsername, String authPassword, String companySymbol, boolean blocked) {
         if (!Auth.authenticateAdmin(authUsername, authPassword)) {
             return false;
         }
         return new StockUtils(service).changeStockAccess(companySymbol, blocked);
     }
-    
+
     @WebMethod(operationName = "changeAccountAccess")
-    public boolean changeAccountAccess(String authUsername, String authPassword, String accountName, boolean blocked){
+    public boolean changeAccountAccess(String authUsername, String authPassword, String accountName, boolean blocked) {
         if (!Auth.authenticateAdmin(authUsername, authPassword)) {
             return false;
         }
         return new AccountUtils().changeAccountAccess(accountName, blocked);
     }
-    
+
     @WebMethod(operationName = "login")
-    public boolean login(String authUsername, String authPassword){
+    public boolean login(String authUsername, String authPassword) {
         return (Auth.authenticate(authUsername, authPassword));
     }
-    
+
     @WebMethod(operationName = "getCurrencyList")
-    public List<String> getCurrencyList(String authUsername, String authPassword){
+    public List<String> getCurrencyList(String authUsername, String authPassword) {
         if (!Auth.authenticate(authUsername, authPassword)) {
             return null;
         }
         return new StockUtils(service).getCurrencyList();
     }
-    
+
     @WebMethod(operationName = "changeAccountPassword")
-    public boolean changeAccountPassword(String authUsername, String authPassword, String newPassword){
-         if (!Auth.authenticate(authUsername, authPassword)) {
+    public boolean changeAccountPassword(String authUsername, String authPassword, String newPassword) {
+        if (!Auth.authenticate(authUsername, authPassword)) {
             return false;
         }
-         return new AccountUtils().changeAccountPassword(authUsername, newPassword);
+        return new AccountUtils().changeAccountPassword(authUsername, newPassword);
     }
-    
+
     @WebMethod(operationName = "searchStocks")
-    public List<Stock> searchStocks(String authUsername, String authPassword, String searchFor, String orderBy, String currency){
-         System.out.println("searching...");
-         if (!Auth.authenticate(authUsername, authPassword)) {
+    public List<Stock> searchStocks(String authUsername, String authPassword, String searchFor, String orderBy, String currency) {
+        if (!Auth.authenticate(authUsername, authPassword)) {
             return null;
         }
-         System.out.println("test");
         return new StockUtils(service).searchStocks(searchFor, orderBy, currency);
     }
- 
+
 }
