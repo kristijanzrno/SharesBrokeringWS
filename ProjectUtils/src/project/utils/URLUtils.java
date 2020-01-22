@@ -17,6 +17,8 @@ import java.net.URL;
  */
 public class URLUtils {
 
+    // Function to send an URL request (for utilising the external web services)
+    // And returning the results as a readable String
     public static String readURL(String request) throws MalformedURLException, IOException {
         BufferedReader reader = null;
         try {

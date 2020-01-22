@@ -23,6 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 public class XMLUtils {
 
+    // Class created to put the jaxb xml marshalling/unmarshalling code block in a simple static function
+    // Because they are many times in different pieces of the project    
+    
     public static void marshallObject(Object marshallObject, File file) {
         try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(marshallObject.getClass().getPackage().getName());
@@ -46,6 +49,7 @@ public class XMLUtils {
         return null;
     }
 
+    // Unmarshalling the object from a given string instead of file
     public static Object unmarshallObjectFromString(String data, String context) {
         try {
             javax.xml.bind.JAXBContext jaxbCtx = javax.xml.bind.JAXBContext.newInstance(context);
@@ -57,6 +61,7 @@ public class XMLUtils {
         return null;
     }
 
+    // Reading the XML file to a string
     public static String readToString(File file) {
         BufferedReader br;
         StringBuilder sb = new StringBuilder();
@@ -74,6 +79,8 @@ public class XMLUtils {
         return result;
     }
 
+    // Generating a new XMLCalendar date with the current date/time
+    // Used for updating the last-updated information in stock objects
     public static XMLGregorianCalendar currentDate() {
         Date date = new Date();
         Instant instant = date.toInstant();

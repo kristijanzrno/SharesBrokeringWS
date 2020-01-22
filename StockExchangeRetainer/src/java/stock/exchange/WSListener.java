@@ -15,10 +15,12 @@ import javax.servlet.annotation.WebListener;
  */
 @WebListener
 public class WSListener implements ServletContextListener {
-
+    
+    // Runs the initialisation service on the first run (same as in the core WS)
+    // Use during server setup ONLY
+    
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        //Use during server setup ONLY
         //StockPricesClient client = new StockPricesClient();
         //client.initialisePrices();
         //client.updatePrices();
