@@ -92,6 +92,8 @@ public class CurrencyConversionWS {
         return codes;
     }
 
+    // Function to update the currently contained currencies 
+    // Loops over the ExRates objects and updates each one with a new price
     private void updateRates() {
         CurrencyRatesClient client = new CurrencyRatesClient();
         Rates rates = client.getRates();
@@ -99,7 +101,6 @@ public class CurrencyConversionWS {
             for (Rate rate : rates.getRate()) {
                 if (exr.name().equals(rate.getCurrency())) {
                     exr.setRateInUSD(rate.getValue());
-                    System.out.println(exr.name() + " = " + rate.getValue());
                     break;
                 }
             }

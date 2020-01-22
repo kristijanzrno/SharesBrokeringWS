@@ -16,6 +16,9 @@ import saved.currency.rates.Rates;
  */
 public class CurrencyRatesClient {
 
+    // Client to utilise the external CurrencyRatesRetainer Client
+    // To update the currency prices
+    
     private WebTarget webTarget;
     private Client client;
     private static final String SERVICE_URL = "http://localhost:8080/CurrencyRatesRetainer/webresources";

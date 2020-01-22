@@ -20,18 +20,17 @@ public class RatesClient {
     private static final String API_URL = "https://api.exchangeratesapi.io/latest?base=USD";
 
     public RatesClient() {
+        // Prices are immediately updated
         fetchRates();
     }
-
+    // Fetching the rates from an online REST API and saving it to an xml file
     public boolean fetchRates() {
-        //fetch
         try {
             saved.rates.Rates parsedRates = new saved.rates.Rates();
             String json = URLUtils.readURL(API_URL);
             JSONObject rates = new JSONObject(json).getJSONObject("rates");
-            if (rates == null) {
+            if (rates == null)
                 return false;
-            }
             Iterator<String> keys = rates.keys();
             while (keys.hasNext()) {
                 String key = keys.next();
@@ -42,11 +41,9 @@ public class RatesClient {
                 parsedRates.getRate().add(rate);
             }
             saveRates(parsedRates);
-
         } catch (Exception e) {
             return false;
         }
-
         return true;
     }
 

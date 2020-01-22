@@ -26,10 +26,15 @@ public class CurrencyRatesWS {
     @Context
     private UriInfo context;
 
+    // Simple REST service to preserve the fetched currency rates on an local xml file
+    // for the offline use
     public CurrencyRatesWS() {
+        // Prices are immediately updated (to an rates.xml file), 
+        // but if the service is offline, the previously saved rates.xml will be read
         RatesClient rates = new RatesClient();
     }
 
+    // Returns a list of updated currency rates
     @Path("/getRates")
     @GET
     @Produces(MediaType.APPLICATION_XML)
