@@ -19,13 +19,17 @@ import project.utils.XMLUtils;
  * @author kristijanzrno
  */
 public class StockUtils {
+    
+    // Class created for clean and readable stock management
 
     StocksList stocksList;
+    // Utilises stock exchange retainer, to continously update the stock prices
     StockExchangeRetainerClient stockExchangeClient;
 
     CurrencyConversionWSService service;
     docwebservices.currency.convertor.CurrencyConversionWS port;
 
+    // Takes currency conversion service as an input
     public StockUtils(CurrencyConversionWSService service) {
         // Initialising currency conversion service & service port once instead of at every "getConversionRate()" call
         // This improves the performance 3-4x on the large dataset (e.g. in getAllStocks() method)
@@ -35,11 +39,12 @@ public class StockUtils {
         stockExchangeClient = new StockExchangeRetainerClient();
     }
 
+    // Function to buy a stock based on an account username, stock symbol and an amount
     public boolean buyStock(String username, String companySymbol, int value) {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
                 if (stock.getNoOfAvailableShares() >= value && !stock.isBlocked() && value > 0) {
-                    //add stock to the user
+                    // If stock exists, and has available shares, add it to the user
                     if (new AccountUtils().addShare(username, stock.getCompanySymbol(), stock.getCompanyName(), value)) {
                         stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() - value);
                         saveStocks();
@@ -55,7 +60,7 @@ public class StockUtils {
     public boolean sellStock(String username, String companySymbol, int value) {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
-                //remove stock from the user
+                // If stock exists, try removing it from the user
                 if (!stock.isBlocked() && new AccountUtils().removeShare(username, stock.getCompanySymbol(), value)) {
                     stock.setNoOfAvailableShares(stock.getNoOfAvailableShares() + value);
                     saveStocks();
@@ -67,6 +72,8 @@ public class StockUtils {
         return false;
     }
 
+    // Returns a Stock object, based on the company symbol and wanted currency
+    // Automatically converts the price to the wanted currency if the wanted currency is not "USD" (default)
     public Stock getStock(String companySymbol, String currency) {
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanySymbol().toUpperCase().equals(companySymbol.toUpperCase())) {
@@ -81,6 +88,7 @@ public class StockUtils {
         return null;
     }
 
+    // Returns all the stocks with their prices converted to a wanted currency
     public List<Stock> getAllStocks(String currency) {
         updatePrices();
         if (!currency.equals("USD") && !currency.isEmpty()) {
@@ -93,10 +101,13 @@ public class StockUtils {
         return stocksList.getStocks();
     }
 
+    // Returns a list of stocks based on a search parameters
     public List<Stock> searchStocks(String searchFor, String orderBy, String currency) {
         List<Stock> stocks = new ArrayList<>();
         for (Stock stock : stocksList.getStocks()) {
             if (stock.getCompanyName().toLowerCase().contains(searchFor.toLowerCase()) || stock.getCompanySymbol().toLowerCase().contains(searchFor.toLowerCase()) || searchFor.isEmpty()) {
+                // If the stock is searched for, convert its price to the wanted currency
+                // and add it to the list that is gonna be returned
                 if (!currency.equals("USD") && !currency.isEmpty()) {
                     double conversionRate = getConversionRate(currency.toUpperCase(), "USD");
                     stock.getPrice().setCurrency(currency.toUpperCase());
@@ -105,6 +116,7 @@ public class StockUtils {
                 stocks.add(stock);
             }
         }
+        // Order the list before returning it
         switch (orderBy) {
             case "name-asc":
                 Collections.sort(stocks, (o1, o2) -> o1.getCompanyName().toLowerCase().compareTo(o2.getCompanyName().toLowerCase()));
@@ -128,6 +140,7 @@ public class StockUtils {
         return stocks;
     }
 
+    // Returns a list of all stock objects on the service
     public StocksList getAllStocksObj(String currency) {
         if (!currency.equals("USD") && !currency.isEmpty()) {
             for (Stock stock : stocksList.getStocks()) {
@@ -139,6 +152,8 @@ public class StockUtils {
         return stocksList;
     }
 
+    // Function to update the price of a specific stock
+    // Utilises the external REST service that presists the prices for an offline use
     public boolean updatePrice(String companySymbol) {
         Stock updatedStock = getStock(companySymbol, "");
         if (updatedStock == null) {
@@ -155,7 +170,9 @@ public class StockUtils {
         saveStocks();
         return true;
     }
-
+    
+    // Function to update the price of a specific stock
+    // Utilises the external REST service that presists the prices for an offline use
     public boolean updatePrices() {
         StocksList updatedStocks = stockExchangeClient.updatePrices(stocksList);
         if (updatedStocks == null) {
@@ -166,23 +183,26 @@ public class StockUtils {
         return true;
     }
 
+    // Changes the stock access (tradable yes/no)
     public boolean changeStockAccess(String companySymbol, boolean blocked) {
         getStock(companySymbol, "USD").setBlocked(blocked);
         saveStocks();
         return true;
     }
 
+    // Saves the stocks utilising the jaxb marshalling to an xml file
     private void saveStocks() {
         XMLUtils.marshallObject(stocksList, new File("stocks.xml"));
     }
 
+    // Function to get the currency list from an external SOAP service
     public List<String> getCurrencyList() {
         return port.getCurrencyCodes();
     }
-
+    
+    // Function to get the conversion rate from an external SOAP service
     public double getConversionRate(java.lang.String arg0, java.lang.String arg1) {
         return port.getConversionRate(arg0, arg1);
     }
     
-
 }

@@ -16,6 +16,9 @@ import javax.servlet.annotation.WebListener;
 @WebListener
 public class WSListener implements ServletContextListener {
 
+    // Listens when the service is deployed
+    // And initialises it on the first use if the line is uncommented
+    
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         StockInitialiser initialiser = new StockInitialiser();

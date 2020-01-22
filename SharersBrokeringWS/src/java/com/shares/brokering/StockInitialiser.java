@@ -21,9 +21,12 @@ import project.utils.XMLUtils;
  */
 public class StockInitialiser {
 
-    public StockInitialiser() {
-    }
+    public StockInitialiser() {}
 
+    // Stock initialiser function is only used on the first run
+    // It initialised the stock service by creating the required "stocks.txt" file
+    // And populating it with uncomplete supported Stock objects
+    // When this function is executed, service is ready to start working normally
     public void initialise() {
         File f = new File("stocks.xml");
         if (!f.exists()) {
@@ -33,6 +36,7 @@ public class StockInitialiser {
                 e.printStackTrace();
             }
         }
+        // Supported stocks are kept in a "stocks.txt" file
         URL fileURL = this.getClass().getClassLoader().getResource("stocks.txt");
         File stocksFile = new File("");
         try {
@@ -43,6 +47,7 @@ public class StockInitialiser {
         Data.StocksList stocks = new Data.StocksList();
         try (BufferedReader br = new BufferedReader(new FileReader(stocksFile))) {
             String line;
+            // Creating a stock object for each line in the stocks.txt file
             while ((line = br.readLine()) != null) {
                 Data.Stock stock = new Data.Stock();
                 stock.setCompanySymbol(line.split(";;")[0]);
@@ -58,6 +63,7 @@ public class StockInitialiser {
         } catch (Exception ex) {
             Logger.getLogger(WSListener.class.getName()).log(Level.SEVERE, null, ex);
         }
+        // Saving the stock objects to a newly created "stocks.xml" file
         XMLUtils.marshallObject(stocks, new File("stocks.xml"));
     }
 

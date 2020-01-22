@@ -13,6 +13,8 @@ import sharers.brokering.useraccounts.Account;
  */
 public class Auth {
 
+    // Authentication function for regular user accounts
+    // Checks the given username and password against the ones stored in the database
     public static boolean authenticate(String username, String password) {
         AccountUtils accountUtils = new AccountUtils();
         for (Account account : accountUtils.getAccounts()) {
@@ -23,6 +25,9 @@ public class Auth {
         return false;
     }
 
+    // Authentication function for administrator accounts
+    // To count as an administrator, account level must be equal to value 3
+    // Checks the given username and password against the ones stored in the database
     public static boolean authenticateAdmin(String username, String password) {
         AccountUtils accountUtils = new AccountUtils();
         for (Account account : accountUtils.getAccounts()) {

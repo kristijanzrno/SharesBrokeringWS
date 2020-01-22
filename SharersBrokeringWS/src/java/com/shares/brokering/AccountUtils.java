@@ -14,8 +14,11 @@ public class AccountUtils {
 
     AccountList accounts;
 
+    // Class created for clean and readable account management
+    
     public AccountUtils() {
-        //Initialise accounts file if not present
+        // Initialise accounts file if not present
+        // Usually executes on the first run on the server
         File f = new File("accounts.xml");
         if (!f.exists()) {
             try {
@@ -35,10 +38,10 @@ public class AccountUtils {
     }
 
     public boolean createAccount(String username, String password, int level) {
-        //Check if account already exists
-        if (getAccount(username) != null) {
+        // Check if account already exists
+        if (getAccount(username) != null)
             return false;
-        }
+        // If not, create the new account and save it
         Account account = new Account();
         account.setAccountName(username);
         account.setAccountPassword(password);
@@ -49,10 +52,10 @@ public class AccountUtils {
     }
 
     public boolean deleteAccount(String username) {
-        if (getAccount(username) == null) {
+        // Check if account exists
+        if (getAccount(username) == null)
             return false;
-        }
-
+        // If yes, find it, delete it and save the accounts
         for (Account account : accounts.getAccounts()) {
             if (account.getAccountName().equals(username)) {
                 accounts.getAccounts().remove(account);
@@ -64,10 +67,13 @@ public class AccountUtils {
     }
 
     public boolean addShare(String username, String companySymbol, String companyName, int value) {
+        // Check if account already posses shares of this company
+        // If yes, add the new bought shares to the already possesed shares
         if (getAccountStock(getAccount(username), companySymbol) != null) {
             getAccountStock(getAccount(username), companySymbol)
                     .setNoOfBoughtShares(getAccountStock(getAccount(username), companySymbol).getNoOfBoughtShares() + value);
-            //todo change date
+            getAccountStock(getAccount(username), companySymbol).setDateBought(XMLUtils.currentDate());
+        // If not, create a new share and assign it to the account
         } else {
             BoughtStock stock = new BoughtStock();
             stock.setCompanySymbol(companySymbol);
@@ -77,6 +83,7 @@ public class AccountUtils {
             if (getAccount(username).getAccountBoughtStocks() == null) {
                 getAccount(username).setAccountBoughtStocks(new BoughtStocks());
             }
+            // Add the created stock to the account
             getAccount(username).getAccountBoughtStocks().getBoughtStock().add(stock);
         }
         saveAccounts();
@@ -84,9 +91,10 @@ public class AccountUtils {
     }
 
     public boolean removeShare(String username, String companySymbol, int value) {
+        // Check if the account posseses the share and that the sell value is greater than 0
         if (getAccountStock(getAccount(username), companySymbol) != null && value > 0) {
             int possesedValue = getAccountStock(getAccount(username), companySymbol).getNoOfBoughtShares();
-            // Trying to sell more than possesed
+            // Check if user is trying to sell more than possesed
             if (value > possesedValue) {
                 return false;
             }
@@ -105,6 +113,7 @@ public class AccountUtils {
         return false;
     }
 
+    // Get the account object with the username
     public Account getAccount(String username) {
         for (Account account : accounts.getAccounts()) {
             if (account.getAccountName().equals(username)) {
@@ -114,10 +123,12 @@ public class AccountUtils {
         return null;
     }
 
+    // Returns a list of all accounts
     public List<Account> getAccounts() {
         return accounts.getAccounts();
     }
 
+    // Returns a list of all account shares
     public List<BoughtStock> getAllAccountStocks(Account account) {
         if (account.getAccountBoughtStocks() == null) {
             return null;
@@ -125,6 +136,7 @@ public class AccountUtils {
         return account.getAccountBoughtStocks().getBoughtStock();
     }
     
+    // Returns a list of all account shares, for a account name
      public List<BoughtStock> getAllUsernameStocks(String account) {
         if (getAccount(account).getAccountBoughtStocks() == null) {
             return null;
@@ -132,18 +144,20 @@ public class AccountUtils {
         return getAccount(account).getAccountBoughtStocks().getBoughtStock();
     }
      
+    // Changing the account access level (block/unblock)
     public boolean changeAccountAccess(String account, boolean blocked){
         getAccount(account).setBlocked(blocked);
         saveAccounts();
         return true;
     }
-    
+    // Changing the password
     public boolean changeAccountPassword(String account, String password){
         getAccount(account).setAccountPassword(password);
         saveAccounts();
         return true;
     }
-
+    
+    // Getting the info about specific account share
     private BoughtStock getAccountStock(Account account, String companySymbol) {
         if (getAllAccountStocks(account) == null) {
             return null;
@@ -153,9 +167,11 @@ public class AccountUtils {
                 return boughtStock;
             }
         }
+        // If the share has not been found, return null
         return null;
     }
 
+    // Saving the accounts using jaxb binding to "accounts.xml" file
     private void saveAccounts() {
         XMLUtils.marshallObject(accounts, new File("accounts.xml"));
     }
